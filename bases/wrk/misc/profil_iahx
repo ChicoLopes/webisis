@@ -1,0 +1,52 @@
+# Configuracoes e ajustes de ambiente para uso com iAHx
+
+#   Data   Resp		Comentarios
+# 20120727 FJLopes	criacao do prefil de processamento iAHx
+# 20140220 FJLopes	Otimizacao de configuracao do perfil
+# 20150316 FJLopes	Alteracao na organizacao e mudanca de simbolos internos
+
+# endereco do destino de mensagens automaticas
+export	IAHx_ADMIN="ofi@bireme.org"
+
+# Porta padrao do SSH
+export	PORTsshn="22";		# Porta ssh normal
+export	PORTsshp="8022";	# Porta ssh producao
+
+# servidor de producao
+export	SPIAHx="db02dx"
+
+# servidor de homologacao
+export	SHIAHx="hm01dx"
+
+# servidor de teste
+export	STIAHx="ts01dx"
+
+# Topo do processamento
+export	PROC_TREE="/bases/iahx"
+# Topo do servico IAHx
+export	IAHX_TREE="/home/javaapps"
+
+# raiz do IAHx
+export	IAHX_ROOT="${IAHX_TREE}/iahx-server"
+
+# Topo da arvore do processamento
+export	IAHX_PROC="${PROC_TREE}"
+
+# raiz dos indices prontos
+export	INDEX_ROOT="${IAHX_ROOT}/indexes"
+
+# localizacao de componentes executaveis da camada de interface
+export	PATH_IAHX="${IAHX_ROOT}/bin"
+
+# localizacao de executaveis do processamento
+export	PATH_EXEC="${IAHX_PROC}/exec"
+
+# localizacao de areas de processamento
+export	PATH_PROC="${IAHX_PROC}/proc"
+
+# localizacao de arquivos de entrada
+export	PATH_INPUT="${IAHX_PROC}/xml-inbox"
+
+# Assume executaveis de iAHx como padrao
+export PATH=$PATH_IAHX:$PATH_EXEC:$PATH
+

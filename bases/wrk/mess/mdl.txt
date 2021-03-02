@@ -1,0 +1,10 @@
+<body>
+<p>Prezado,</p>
+
+<p>Esta é uma mensagem automática do sistema de indexação do bloco <b>MDL</b>. </p>
+
+<p>Favor verificar no ambiente de homologação o sistema de pesquisa e caso esteja OK fica liberada a solicitação de processamento FULL do PORTAL e de GHL</p>
+
+<p>Atenciosamente,</p>
+Operação de Fonte de Informação - OFI
+

@@ -1,0 +1,144 @@
+ lw(9999),mpl
+ 
+ /* montagem efetiva do formato de exibicao */
+ proc('d7000d7001d7002'
+ 
+ /*		v270- Empréstimo / Nome / Data
+  */
+ if v270>'' then
+	'<7000 0>&#160;</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>'
+		'<font color="red">(ATENCAO: EMPRESTADO: ',mhu,v270,mpl,')</font>'
+	'</7002>'
+ fi
+ 
+ /*		v1  - Tipo
+  */ 
+ if v1 : 'SOBR.' then '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>- MUSEU SOBRADINHO -</7002>'  fi
+ if v1 : 'HEM.'  then '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>- HEMEROTECA -</7002>'        fi
+ if v1 : 'A.H.'  then '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>- ARQUIVO HISTÓRICO -</7002>' fi
+ if v1 : 'PATR.' then '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>- PATRIMÔNIO/LAPA -</7002>'   fi
+
+ '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">- LOCALIZAÇÃO -</font></7002>'
+ 
+ /*		v12 - Local
+  *		v20 - Data
+  *		v30 - Assunto
+  *		v40 - SubAssunto
+  *		v50 - Descrição
+  *		v170- Notas
+  *		v800- Número museu provisório
+  */
+ if v1 : 'SOBR.' then
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'     '<7002 0><font color="red">',v12,'<br><br></font></7002>'
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'     '<7002 0>',v30+|; |,'</7002>'
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'     '<7002 0><font color="red">',v40+|; |,'<br></font></7002>'
+	'<7000 0>descricao:</7000><7001 0>&#160;</7001>' '<7002 0><font color="red">',v50+|; |,'<br></font></7002>'
+	'<7000 0>data:</7000><7001 0>&#160;</7001>'      '<7002 0><font color="red">',v20+|; |,'<br><br></font></7002>'
+	if v170>'' then '<7000 0>Notas:</7000><7001 0>&#160;</7001>''<7002 0>',v170,'</7002>',fi,/#
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'     '<7002 0><font color="red">(número provisório no Museu: ',v800,')<br><br></font></7002>'
+ fi
+ 
+ /*		v1  - Tipo
+  *		v10 - Caixa
+  *		v11 - Envelope (data/número)
+  *		v12 - Local
+  */
+ if v1: 'HEM.' then
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'               '<7002 0><font color="red">',v12,'<br>HEMEROTECA</7002>'
+	'<7000 0>Caixa:</7000><7001 0>&#160;</7001>'               '<7002 0><font color="red">',v10,'</font></7002>'
+	if p(v11) then '<7000 0>&#160;</7000><7001 0>&#160;</7001>''<7002 0><font color="red">env.: ',v11,'</font></7002>',fi
+ fi
+ 
+ /*		v1  - Tipo
+  *		v10 - Caixa
+  *		v12 - Local
+  *		v13 - Mapoteca
+  */
+ if v1 : 'A.H.' and v13>'' then
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>' '<7002 0><font color="red">',v12,'<br>',v13,' - Gav.',v10,'</font></7002>'
+ fi
+ 
+ /*		v1  - Tipo
+  *		v10 - Caixa
+  *		v11 - Envelope (data/número)
+  *		v12 - Local
+  *		v13 - Mapoteca
+  *		v14 - Armário
+  */
+ if v1 : 'A.H.' and v13='' then
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'
+	'<7002 0><font color="red">',v12,'<br>Armário: ',v14,' - caixa: ',v10,'<br>',if p(v11) then  'env.: ',v11 fi,'</font></7002>'
+ fi
+ 
+ /*		v12 - Local
+  */
+ if v1 : 'PATR.' then
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>' '<7002 0><font color="red">',v12,'</font></7002>'
+ fi
+ 
+ /*		v1  - Local
+  *		v20 - Data
+  *		v21 - Data (artigo de periódico)
+  *		v30 - Assunto
+  *		v40 - SubAssunto
+  *		v50 - Descrição
+  *		v60 - Título de periódico
+  *		v70 - Título artigo (periódico
+  *		v80 - Autor  artigo (periódico)
+  *		v90 - Página artigo de periódico
+  *		v170- Notas
+  */
+ if v1 : 'HEM.' and v70>'' then
+	'<7000 0>',v70,'</7000><7001 0>&#160;</7001>'   '<7002 0>&#160;</7002>'
+	if p(v80) then '<7000 0>autor:</7000><7001 0>&#160;</7001>'  '<7002 0>',V80,'</7002>', fi
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'    '<7002 0>(publicado no periodico: ',mhu,v60," - " mhl,v21+|; |, " - p."v90,')<br><br></7002>' 
+	'<7000 0>assunto:</7000><7001 0>&#160;</7001>'  '<7002 0>',v30+| / |,'<br>',v40+|; |,'</7002>'
+    if v170>'' then '<7000 0>Notas:</7000><7001 0>&#160;</7001>''<7002 0>',v170,'</7002>' fi
+ fi
+ 
+ if v1 : 'A.H.' and a(v70) then
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'  '<7002 0>',v30+|; |,'</7002>'
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'  '<7002 0>',v40+|; |,'</7002>'
+	'<7000 0>descricao:</7000><7001 0>&#160;</7001>' '<7002 0>',v50+|; |,'</7002>'
+	     '<7000 0>data:</7000><7001 0>&#160;</7001>' '<7002 0>',v20+|; |,'</7002>'
+    if v170>'' then '<7000 0>Notas:</7000><7001 0>&#160;</7001>''<7002 0>',v170,'</7002>' fi
+ fi
+ 
+ if v1 : 'PATR.' and a(v70) then 
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'  '<7002 0>',v30+|; |,'</7002>'
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001>'  '<7002 0>',v40+|; |,'</7002>'
+	'<7000 0>descricao:</7000><7001 0>&#160;</7001>' '<7002 0>',v50+|; |,'</7002>'
+	     '<7000 0>data:</7000><7001 0>&#160;</7001>' '<7002 0>',v20+|; |,'</7002>'
+    if v170>'' then '<7000 0>Notas:</7000><7001 0>&#160;</7001>''<7002 0>',v170,'</7002>' fi
+ fi
+
+ /*		v300- imagem SubA texto do link SubB nome do arquivo de imagem
+  *
+  */
+ if v300>'' then
+		'<7000 0>&#160;</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>'
+			if v300^a>'' then ('<a href="/iah/image/his/',v300^b,'" target="_blank">',v300^a,'</a><br>') fi
+		'</7002>'
+ fi
+
+ '<7000 0>&#160;</7000>'
+ '<7001 0>&#160;</7001>'
+ '<7002 0>&#160;</7002>'
+
+ )
+
+ /* Exibicao efetiva dos dados montados acima */
+ '<table width="100%" cellspacing="0" cellpadding="1" border="0">',/
+ (
+  '<tr valign="top">',/
+  ' <td width="25%"  align="right"><font face="verdana"><font size="1">',mpl,v7000,'</td>',/
+  ' <td width="1"   align="center"><font face="verdana"><font size="1">',mpl,v7001,'</td>',/
+  ' <td               align="left"><font face="verdana"><font size="1">',mpl,v7002,'</td>',/
+  '</tr>',/
+ )
+ '</table>',/
+

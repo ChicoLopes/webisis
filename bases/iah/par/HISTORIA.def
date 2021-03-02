@@ -1,0 +1,61 @@
+[FILE_LOCATION]
+
+FILE DATABASE.*=%path_database%his/his.*
+FILE DATABASE.XML=%path_database%pfts/lilXML.pft
+
+FILE G850ANS.*=%path_database%gizmo/g850ans.*
+FILE GANS850.*=%path_database%gizmo/gans850.*
+
+FILE standard.pft=%path_database%pfts/%lang%/hisrhtm.pft
+FILE detalhado.pft=%path_database%pfts/%lang%/hisdhtm.pft
+FILE SHORTCUT.IAH=%path_database%pfts/%lang%/shortcut.pft
+
+[INDEX_DEFINITION]
+INDEX Tw=^1Todos os campos^d*
+INDEX St=^1Status^s242
+INDEX Ci=^1Catalogo infantil^s240
+INDEX Cj=^1Catalogo juvenil^s241
+INDEX I3=^1ISBN-13^s196
+INDEX I0=^1ISBN-10^s190
+INDEX Le=^1Linha editorial^s41
+INDEX Cm=^1Serie^s40
+INDEX Ti=^1Titulo^s60
+INDEX Au=^1Autor^s50
+INDEX Ad=^1Adaptador^s51
+INDEX Il=^1Ilustrador^s70
+INDEX Ft=^1Fotografo^s71
+INDEX Td=^1Tradutor^s30
+INDEX To=^1Titulo original^s200
+INDEX Dl=^1Ano de lancamento^s120
+INDEX De=^1Data nova edição^s121
+INDEX Di=^1Data de impressao^s220
+INDEX Li=^1Local de impressao^s230
+INDEX Cd=^1Codigo^s20
+INDEX Tb=^1Tombo^s10
+INDEX Li=^1Livros selecionados/indicados^s171
+INDEX Lc=^1Livros inscritos^s244
+INDEX Lp=^1Livros premiados^s173
+INDEX No=^1Nova ortografia^s1
+INDEX As=^1Assunto^s90
+
+[APPLY_GIZMO]
+GIZMO=G850ANS
+G_IZMO=GANS850
+
+
+[FORMAT_NAME]
+FORMAT standard.pft=^1simples^2simples^3simple
+FORMAT detalhado.pft=^1Detalhado^2Datallado^3Detailed
+
+FORMAT DEFAULT=standard.pft
+
+[HELP_FORM]
+HELP FORM=help_form.htm
+NOTE FORM F=note_form.htm
+
+[PREFERENCES]
+AVAILABLE FORMS=F,A
+SEND RESULT BY EMAIL=
+NAVIGATION BAR=ON
+DOCUMENTS PER PAGE=10
+FEATURES=

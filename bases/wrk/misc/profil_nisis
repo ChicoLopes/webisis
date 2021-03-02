@@ -1,0 +1,27 @@
+export      ISIS='/usr/local/bireme/cisis/5.7e/linux64/isis'
+export     ISISG='/usr/local/bireme/cisis/5.7e/linux64/isisG'
+export  ISIS1660='/usr/local/bireme/cisis/5.7e/linux64/isis1660'
+export      LIND='/usr/local/bireme/cisis/5.7e/linux64/lind'
+export   LIND512='/usr/local/bireme/cisis/5.7e/linux64/lind512'
+export LIND512G4='/usr/local/bireme/cisis/5.7e/linux64/lind512G4'
+export    LINDG4='/usr/local/bireme/cisis/5.7e/linux64/lindG4'
+export       FFI='/usr/local/bireme/cisis/5.7e/linux64/ffi'
+export    FFI512='/usr/local/bireme/cisis/5.7e/linux64/ffi512'
+export  FFI512G4='/usr/local/bireme/cisis/5.7e/linux64/ffi512G4'
+export     FFIG4='/usr/local/bireme/cisis/5.7e/linux64/ffiG4'
+export   FFIG4_4='/usr/local/bireme/cisis/5.7e/linux64/ffiG4_4'
+export    FFI256='/usr/local/bireme/cisis/5.7e/linux64/BigIsis'
+export      WXISI=$ISIS
+export     WXISIG=$ISISG
+export   WXIS1660=$ISIS1660
+export      WXISL=$LIND
+export   WXISL512=$LIND512
+export WXISL512G4=$LIND512G4
+export    WXISLG4=$LINDG4
+export      WXISF=$FFI
+export   WXISF512=$FFI512
+export WXISF512G4=$FFI512G4
+export    WXISFG4=$FFIG4
+export  WXISFG4_4=$FFIG4_4
+export   WXISF256=$FFI256
+

@@ -1,0 +1,35 @@
+# -------------------------------------------------------------------------- #
+# Configuracao de processamento
+
+# Status
+TRUE
+
+# Periodicidade de processamento
+
+
+# Diretorio de processamento
+PATH_PROC="$PRGEXE/.."
+
+# Localizacao da base de dados de entrada
+PATH_DATA="../edi"
+
+# Localizacao da base de dados de saida
+PATH_OUT=
+
+# Local da producao interna
+PATH_INTRA
+
+# Local da produção publica
+PATH_INTER=
+
+BASEIN
+BASEOUT
+
+# Controle de erros
+NOERRO="0"
+OPC_ERRO=""
+
+# Flag de NAO ENVIO para producao
+NOPROD="0"              # Por padrao envia a producao
+OPC_PROD=""
+

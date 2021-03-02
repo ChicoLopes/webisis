@@ -1,0 +1,13 @@
+<body>
+<p>Prezado,</p>
+
+<p>Esta é uma mensagem automática do sistema de atualização do índice de pesquisa do <b>BVSMS -  BVS Ministério da Saúde</b>. </p
+
+<p>Favor verificar no ambiente de homologação do portal o sistema de pesquisa e caso esteja OK solicitar a unidade de infra-estrutura (ITI) através do site <a href="http://suporte.bireme.br/">http://suporte.bireme.br/</a>:</p>
+
+- Transferência do diretório /home/javaapps/iahx-server/indexes/bvsms/main/ do servidor de processamento para o servidor de produção, apagando conteúdo anterior.<br/>
+
+- Re-inicialização do serviço /etc/init.d/bvs-iahx-server3 no servidor de producao.<br/>
+
+<p>Atenciosamente,</p>
+Operacao de Fontes de Informacao - OFI

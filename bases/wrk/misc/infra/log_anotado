@@ -1,0 +1,225 @@
+# -------------------------------------------------------------------------- #
+# LOG - Procedimento para criacao de arqs. LOG
+# -------------------------------------------------------------------------- #
+# Anchieta - 16/12/93
+#     sintaxe : . log
+#     entrada : setar previamente as variaveis:
+#                 TPR="tipo de registro"
+#                 MSG="mensagem"
+#                 RST="resultado do processamento ou local do resultado"
+#                 QTD="quantidade de arquivos criados"
+# Comentarios : A LINHA COM O COMANDO <LGST="$?"> OBRIGATORIAMENTE DEVE SER
+#                      OBRIGATORIAMENTE A PRIMEIRA A SER EXECUTADA
+#               
+# A estrutura de diretorios esperada eh mostrada abaixo:
+#   / --+
+#       |
+#       +--- LGRAIZ - diretorio raiz de processamento em geral "bases"
+#       |       |
+#       .       +--- LGPRD - diretorio de processamento em geral "xxx.000"
+#       .       |      |
+#       .       .      +--- tpl.xxx - diretorio com shells de processamento
+#               .      +--- tabs    - diretorio com arquivos auxiliares
+#               .      +--- LGBAS   - diretorio da base em geral "xxx.xxx"
+#                      .
+#                      .
+#                      .
+#
+# Os tipos de registro relevantes são: 
+#   "start" - utilizado no inicio dos scripts, anota em log seu nome e
+#              parametros de chamada
+# "iffatal" - utilizado para testar o retorno de chamadas efetuadas dentro
+#              dos scripts, em caso de falha na chamada testada, anota em
+#              log o termo "fatal" e a mensagem usada como parametro
+# "warning" - utilizado para sinalizar uma condicao nao normal, mas nao
+#              fatal em um script, anota em log o termo "warning" e a
+#              mensagem usada como parametro
+#   "fatal" - utilizado para, incondicionalmente, interromper um script,
+#              anota em log o termo "fatal" e a mensagem usada como parametro
+#     "end" - utilizado para marcar o termino de um script, anota em log, 
+#              apenas o seu proprio tipo "end"
+#    outros - pelo emprego de uma string diferente das acima, eh empregado
+#              na sinalizacao de eventos relevantes no script e nao causa
+#              interrupcao na execucao, anota em log o seu tipo e mensagem
+#              usada como parametro de chamada
+#
+# Em RST pode-se ter uma mascara para contagem de arquivos, por exemplo, 
+#    *.cnt para contar a quantidade de arquivo com esta extensao ha no
+#    diretorio corrente.
+#    Pode-se ter tambem um path para diretorio que tera seus arquivos
+#    contados.
+#    Ou pode-se ter uma misto dos dois tipos de informacao
+#      NAO ESQUECER QUE INDICAR APENAS UM PATH ACRESCE EM UM O RESULTADO
+#
+# Para QTD pode-se ter a informacao de quantidade esperada de arquivos a
+#    ser encontrada no diretorio, ou simplesmente anotada em log
+#    Quando RST esta presente e QTD contem valor eh efetuada uma comparacao
+#    de valores e em caso de divergencia, anota-se, automaticamente, um
+#    warning em log
+#
+# Da interacao RST e QTD podemos tirar as seguintes acoes:
+#  com RST presente e QTD presente anota-se em log a quantidade de arquivos
+#                                  encontrada conforme RST. O tipo de
+#                                  registro depende da comparacao QTD e `RST`
+#  com RST presente e QTD ausente  anota-se em log a quantidade de arquivos
+#                                  encontrada conforme RST. O tipo de
+#                                  registro eh o de TPR
+#  com RST ausente  e QTD presente anota-se em log o valor de QTD. O tipo de
+#                                  registro eh o de TPR
+#  com RST ausente  e QTD ausente  anota-se em log 0 para QTD e nada para RST
+#                                  O tipo de registro eh o de TPR
+#
+# As anotacoes em log seguem a distribuicao de campos mostrada:
+# 
+#  1 - Diretorio de Producao
+#  2 - Diretorio corrente
+#  3 - SHELL chamado
+#  4 - PID do shell
+#  5 - Ano formato YY
+#  6 - Mes formato MM
+#  7 - Dia formato DD
+#  8 - horas    formato HH
+#  9 - minutos  formato MM
+# 10 - segundos formato SS
+# 11 - TPR indicado, ou modificado conforme regras acima
+# 12 - Path execucao
+# 13 - RST (mascara ou path do resultado do processamento)
+# 14 - QTD (quantidade de arquivos encontrada ou 0)
+# 15 - se TPR=start   comando da chamada ao script
+#      se TRP=end     vazio
+#      se TPR=fatal   TRP - MSG
+#      se TPR=iffatal fatal - MSG (se erro)
+#      se TPR outro   other - MSG (se ok)
+# 16 - User name
+#
+
+# -------------------------------------------------------------------------- #
+
+# Anota o status do ultimo comando executado
+LGST="$?"
+
+# Anota localizacao (PATH) corrente
+LGDTC=`pwd`
+
+# Anota o diretorio de mais alta hierarquia da localizacao
+#   usa a barra como separador de campos e toma o campo 2
+LGRAIZ=/`echo "$LGDTC" | cut -d/ -f2`
+
+# Anota o diretorio de producao
+#  RE empregada:
+#    iniciando por barra                    - '/'
+#    depois da proxima barra                - '[^/]*/'
+#    extrai o que vier antes da outra barra - '\([^/]*\)'
+LGPRD=`expr "$LGDTC" : '/[^/]*/\([^/]*\)'`
+
+# Anota o diretorio da base
+#  RE empregada:
+#    iniciando por barra                    - '/'
+#    depois da segunda barra                - '[^/]*/[^/]*/'
+#    extrai o que vier antes da outra barra - '\([^/]*\)'
+LGBAS=`expr "$LGDTC" : '/[^/]*/[^/]*/\([^/]*\)'`
+
+# Anota o comando emitido
+#  RE empregada:
+#    caso tenha barra       - '.*/'
+#    extrai o que vier apos - '\(.*\)'
+LGPRC=`expr "/$0" : '.*/\(.*\)'`
+
+# Anota ano mes dia hora minuto e segundo
+#  cada um em um campo quando lido em um seq do mx
+LGDTH=`date '+%y|%m|%d|%H|%M|%S'`
+
+# Toma acao conforme o TPR e o STATUS do ultimo comando
+case $TPR in
+#
+# Evento de inicio de execucao de processo
+#	Mensagem de LOG: linha de comando chamada
+#
+  start)
+    LGMSG="$0 $*"
+    ;;
+#
+# Evento de final de execucao de processo
+#	Mensagem de LOG: vazia
+#
+  end)
+    LGMSG=""
+    ;;
+#
+# Evento terminar processo por falha
+#	Mensagem de LOG: Texto definido em MSG
+#	    Sinalizacao: COMANDO: STATUS - Texto definido em MSG
+#
+  fatal|warning)
+    LGMSG="$MSG"
+    echo "$LGPRC: $TPR - $MSG"
+    ;;
+#
+# Verifica STATUS do ultimo comando
+#	Mensagem de LOG: (em caso de falha) Texto definido em MSG
+#	    Sinalizacao: (em caso de falha) COMANDO: STATUS - Texto definido em MSG
+#
+  iffatal)
+    if [ "$LGST" -ne 0 ]
+    then
+      TPR="fatal"
+      LGMSG="$MSG"
+      echo "$LGPRC: $TPR - $MSG"
+    fi
+    ;;
+#
+# Demais casos de TPR
+#	Mensagem de LOG: STATUS - Texto definido em MSG
+#	    Sinalizacao: COMANDO: Texto definido em MSG
+#
+  *)
+    LGMSG="$TPR - $MSG"
+    echo "$LGPRC: $LGMSG"
+    TPR="other"
+    ;;
+esac
+
+#  Se TPR vale "iffatal" aqui eh um evento que NAO necessita log
+if [ "$TPR" != iffatal ]
+then
+  
+  # Se RST nao esta setado, ou eh vazio so depende de QTD para efetuar o ajuste no log
+  # Se RST esta presente e nao eh vazio, ajuste para o log depende dele
+  if [ -z "$RST" ]
+  then
+    # RST inexiste
+    if [ -z "$QTD" ]
+    then
+      # QTD inexiste
+      LGQTD=0
+    else
+      # QTD existe
+      LGQTD=$QTD
+      LGMSG="$TPR - $MSG"
+    fi
+  else
+    # RST existe
+    if [ -z "$QTD" ]
+    then
+      # QTD inexiste
+      LGQTD=`ls -lgo $RST | tr -s " " "|" | cut -d'|' -f3 |wc -l|tr -d " "`
+    else
+      # QTD existe
+      LGQTD=`ls -lgo $RST | tr -s " " "|" | cut -d'|' -f3 |wc -l|tr -d " "`
+      if [ "$QTD" -ne "$LGQTD" ]
+      then
+        TPR="warning"
+      fi
+    fi
+    LGMSG="$TPR - $MSG"
+  fi
+
+  # Efetua a anotacao em arquivo log  
+  echo "$LGPRD|$LGBAS|$LGPRC|$$|$LGDTH|$TPR|$LGDTC|$RST|$LGQTD|$LGMSG|$LOGNAME" >> $LGRAIZ/$LGPRD/$LGPRD.log
+
+  # Ajusta a passagem de sinal de erro 
+  if [ "$TPR" = fatal ]
+  then
+    exit 1
+  fi
+fi
