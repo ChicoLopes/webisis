@@ -1,0 +1,8 @@
+# Ambientacao para uso de JAVA
+## JAVA_HOME				<== ajustado externamente pelo pacote do JAVA (Chico)
+CLASSPATH=.:$JAVA_HOME/lib/tools.jar
+MANPATH=$MANPATH:$JAVA_HOME/man
+TOOLS='/usr/local/bireme/misc/java_tools'
+
+# Coloca tudo disponivel para o ambiente operativo
+export CLASSPATH MANPATH TOOLS

@@ -1,0 +1,12 @@
+<body>
+<p>Prezado,</p>
+
+<p>Esta na hora de efetuar coleta manual de dados para processamento de iAHx.</p>
+<p>&nbsp;</p>
+<p>Tools / Export / "EVIPNet Metadata" from http://cms.evipnet.org/wp-admin/ using user:transfer pass:35bir24</p>
+<p>Tools / Export / "Download do arquivo de exportacao" from http://blog.telessaudebrasil.org.br/wp-admin/ using user:Takeda pass:takeda</p>
+<p>&nbsp;</p>
+<p>Esta é uma mensagem automática do servidor de processamento de índice de pesquisa iAHx.</p>
+
+<p>Atenciosamente,</p>
+Operacao de Fontes de Informacao - OFI

@@ -1,0 +1,7 @@
+open webisis.melhoramentos.com.br
+user isis isis
+bin
+cd www/bases/iah/edi
+lcd linux\iah\edi
+mput edi.*
+bye

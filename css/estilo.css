@@ -1,0 +1,821 @@
+/* ****   Folha de estilos - WebISIS   **** */
+/* ==== Reset dos padrões de navegador ==== */
+*{
+        margin: 0px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Oxigen', sans-serif;
+        font-size: 16px;
+}
+
+hr {
+        margin: 5px;
+}
+
+s {
+        color: red;
+}
+
+/* === Teste de acessibilidade === */
+a[accesskey]:before, button[accesskey]:after, input[accesskey]:after,
+label[accesskey]:after, legend[accesskey]:after, textarea[accesskey]:after {
+    margin-left: 0.3em;
+    content: "[" attr(accesskey) "]";
+    }
+
+/* === Definições do contenedor de telas === */
+.container{
+        max-width: 1280px;                      /* Largura máxima padrão de 1280 pixels */
+        margin: 0 auto;                         /* Centraliza o contenedor */
+        padding: 0;                                     /* Leve descolamento das laterais */
+}
+
+.w25{                                                   /* Para fazer 4 colunas */
+        float: left;
+        width: 25%;
+}
+
+.w25c{                                                  /* Para fazer 4 colunas */
+        float: left;
+        text-align: center;
+        width: 25%;
+}
+
+.w33{                                                   /* Para fazer 3 colunas */
+        float: left;
+        width: 33.3%;
+}
+
+.w33c{                                                  /* Para fazer 3 colunas */
+        float: left;
+        text-align: center;
+        width: 33.3%;
+}
+
+.w50{                                                   /* Para fazer 2 colunas */
+        float: left;
+        width: 50%;
+}
+
+.w50c{                                                  /* Para fazer 2 colunas */
+        float: left;
+        text-align: center;
+        width: 50%;
+}
+
+.w66{                                                   /* Para fazer 1+2 colunas */
+        float: left;
+        width: 66.6%;
+}
+
+.w66c{                                                  /* Para fazer 1+2 colunas */
+        float: left;
+        text-align: center;
+        width: 66.6%;
+}
+
+.w75{
+        float: left;
+        width: 75%;
+}
+
+.w100{
+        float: left;
+        width: 100%;
+}
+
+.w100c{
+        float: left;
+        text-align: center;
+        width: 100%;
+}
+
+.clear{clear: both;}
+
+/* ==== Estilos para a montagem do form de Signin e Login ==== */
+h5{
+        font-size: 9px;
+}
+
+.thumb{
+        font-weight: bolder;
+}
+
+.formlogin{
+        width: 320px;                                                   /* Largura dos formulários de sign-in e log-in */
+        margin: 0 auto;                                                 /* Mantém sempre centralizados */
+        padding: 6px;                                                   /* Afasta um pouco dos limites "da caixa" */
+        background-color: #eee;                                         /* Fundo cinza bem claro (conforme seu esquema de cores) */
+        border: 1px solid gray;                                         /* Delimita o formulário */
+        border-radius: 7px;                                             /* Faz cantos arredondados */
+}
+
+.formlogin p{                                                           /* Monta Logo marca nos formulários */
+        margin: 25px 0;
+        font-size: 18px;                                                /* Tamanho dos caracteres na Logo marca */
+}
+
+.formlogin h1{                                                          /* Monta Logo marca nos formulários */
+        padding: 10px 0;                                                /* Espaçamento vertical da logo marca */
+        font-size: 23px;                                                /* Tamanho dos caracteres na Logo marca */
+        font-weight: bold;                                              /* Usa caracteres negrito */
+        text-align: center;                                             /* Alinha o texto da Logo marca ao centro */
+        color: #991C1F;                                                 /* Cor QAPLA (R153 G28 B31) */
+}
+
+.formlogin h1:after{
+  content: ' ';                                                         /* Conteúdo simulado para fazer a linha */
+  display: block;                                                       /* Se comporta como caixa, não como inline */
+  width: 100%;                                                          /* Ocupa toda a largura do formulário */
+  height: 2px;                                                          /* Espessura  da linha */
+  margin-top: 10px;                                                     /* Garante uma distância mínima na vertical */
+  background: -webkit-linear-gradient(left, rgba(153, 28, 31, 0) 0%,rgba(153, 28, 31, 0.8) 20%,rgba(153, 28, 31, 1) 53%,rgba(153, 28, 31, 0.8) 79%,rgba(153, 28, 31, 0) 100%);      /* degrade */
+  background: linear-gradient(left, rgba(153, 28, 31, 0) 0%,rgba(153, 28, 31, 0.8) 20%,rgba(153, 28, 31, 1) 53%,rgba(153, 28, 31, 0.8) 79%,rgba(153, 28, 31, 0) 100%);                      /* degrade */
+}
+
+.formlogin .aviso{
+        display: inline-block;                                          /* Comportamento não de caixa */
+        width: 100%;                                                    /* Atalho para o cadastro ocupa toda a largura do formulário */
+        text-align: center;                                             /* Texto à direita para juntar-se ao botão */
+        color: #777;                                                    /* Texto em tom cinza intermediário */
+        margin-bottom: 5px;                                             /* Distancia um pouco do fundo do formulário */
+        padding: 15px;                                                  /* Garante preenchimento para dar destaque */
+        background-color: #ddd;                                         /* Fundo cinza intermediário do fundo do formulário e do texto da área */
+        border-radius: 5px;                                             /* Faz cantos arredondados na área delimitada */
+}
+
+.formlogin .aviso a{
+        display: inline-block;                                          /* Sem comportamento de caixa, só atributos */
+        color: #991c1f;                                                 /* Caracteres na cor QAPLA */
+        margin-top: 5px;
+        padding: 5px;                                                   /* Peenchimento mínimo para nâo grudar nos limites do botão */
+        width: 48%;                                                     /* Botão ocupa +/- metade da largura da área */
+        height: 30px;                                                   /* Altura do botão de navegação */
+        font-weight: bold;                                              /* Legenda do botão em negrito */
+        text-align: center;                                             /* Legenda centralizada no botão */
+        text-decoration: none;                                          /* Sem sublinhado de link no texto do botão */
+        vertical-align: middle;                                         /* Central legenda em relação do botão */
+        background-color: white;                                        /* Delineia o botão com o background */
+        border-radius: 5px;                                             /* Cantos arredondados para o botão */
+}
+
+.formlogin .link{
+        display: inline-block;                                          /* Comportamento não de caixa */
+        width: 100%;                                                    /* Atalho para o cadastro ocupa toda a largura do formulário */
+        text-align: right;                                              /* Texto à direita para juntar-se ao botão */
+        color: #777;                                                    /* Texto em tom cinza intermediário */
+        margin-bottom: 5px;                                             /* Distancia um pouco do fundo do formulário */
+        padding: 15px;                                                  /* Garante preenchimento para dar destaque */
+        background-color: #ddd;                                         /* Fundo cinza intermediário do fundo do formulário e do texto da área */
+        border-radius: 5px;                                             /* Faz cantos arredondados na área delimitada */
+}
+
+.formlogin .link a{
+        display: inline-block;                                          /* Sem comportamento de caixa, só atributos */
+        color: #991c1f;                                                 /* Caracteres na cor QAPLA */
+        padding: 5px;                                                   /* Peenchimento mínimo para não grudar nos limites do botão */
+        width: 48%;                                                     /* Botão ocupa +/- metrade da largura da área */
+        height: 47px;                                                   /* Altura do botão de navegação */
+        font-weight: bold;                                              /* Legenda do botão em negrito */
+        text-align: center;                                             /* Legenda centralizada no botão */
+        text-decoration: none;                                          /* Sem sublinhado de link no texto do botão */
+        vertical-align: middle;                                         /* Central legenda em relação do botão */
+        background-color: white;                                        /* Delineia o botão com o background */
+        border-radius: 5px;                                             /* Cantos arredondados para o botão */
+}
+
+.formlogin .link a:hover{
+        background-color: #ccc;                                         /* Com o mouse sobre o botáo muda sua cor para um cinza mais intenso um pouco */
+}
+
+.formlogin .input-single{
+        padding: 10px 5px;                                              /* Garante preenchimento nas regiões de input-box */
+        height: 90px;                                                   /* Altura da área de cada input-box */
+        color: #777;                                                    /* Textos da área de input-box em tom cinza mediano */
+}
+
+.formlogin .display-single{
+        padding: 5px;                                                   /* Garante um distanciamento mínimo às caixas de entrada de texto */
+        margin-left: 5px;
+        width: 97%;                                                     /* Ocupa toda a largura possível para as caixas de entada de texto */
+        height: 40px;                                                   /* Altura das caixas de entrada de texto */
+        color: #444;                                                    /* Cinza pouco mais profundo na borda da caixa de entrada de texto */
+        border: 1px solid #bbb;                                         /* Delineia borda da caixa de entrada de texto */
+        border-radius: 5px;                                             /* Cantos arredondados na caixa de entrada de texto */
+}
+
+.formlogin .input-single input{
+        padding: 5px;                                                   /* Garante um distanciamento mínimo às caixas de entrada de texto */
+        width: 100%;                                                    /* Ocupa toda a largura possível para as caixas de entada de texto */
+        height: 40px;                                                   /* Altura das caixas de entrada de texto */
+        color: #444;                                                    /* Cinza pouco mais profundo na borda da caixa de entrada de texto */
+        border: 1px solid #bbb;                                         /* Delineia borda da caixa de entrada de texto */
+        border-radius: 5px;                                             /* Cantos arredondados na caixa de entrada de texto */
+}
+
+.formlogin .input-single input[type=submit]{
+        padding: 5px;                                                   /* Espaça minimamente das bordas do formulário */
+        width: 100%;                                                    /* Largura do botão submit máxima respeitando o espaçamento mínimo das bordas */
+        height: 40px;                                                   /* Altura do botão */
+        color: white;                                                   /* Legenda em branco */
+        background-color: rgb(153, 28, 31);                             /* Fundo em cor QAPLA */
+        font-weight: bold;                                              /* Legenda do botão submit em negrito */
+        border: 1px solid black;                                        /* Borda do botão de submit */
+}
+
+.formlogin .input-single input[type=submit]:hover{
+        background-color: #ccc;                                         /* Com o mouse sobre o botão troca cor de fundo e de frente */
+        color: rgb(153, 28, 31);                                        /* Texto em cor QAPLA */
+}
+
+/* ==== Estilos para a montagem da logo marca e menu ==== */
+.LogoMarca{
+        float: left;                                                    /* Apresenta a logo marca à direita em tela grandes  (> 768px) */
+        width: 300px;                                                   /* Usando 300px da tela (que é grande) */
+        height: 50px;                                                   /* Logo marca tem a mesma altura que a banda de menu nas telas grandes */
+        /*border: 1px solid black;*/
+}
+
+.LogoMarca h1{
+        height: 50px;                                                   /* Logo marca tem a mesma altura que a banda de menu nas telas grandes */
+        padding-top: 15px;                                              /* Garante afastamento +/- igual no topo e no fundo */
+        font-size: 23px;                                                /* Faz caracteres grandes */
+        text-align: center;                                             /* Alinha logo marca ao centro */
+        color: #991C1F;                                                 /* R153 G28 B31 */
+        /*border: 1px solid red;*/
+}
+
+#menu{
+        float: right;                                                   /* Menu fica à direita em oposição à logo marca */
+        width: calc(100% - 300px);                                      /* Com tamanho exato que permita logomarca à esquerda na mesma linha */
+        height:50px;                                                    /* Limita o tamanho do menu de cabeçalho (may be must be removed) */
+        margin-bottom: 10px;                                            /* Dá um espaço de guarda para iniciar as sessões da página pós menu */
+}
+
+#menu h1{
+        display:none;                                                   /* Desliga a logo marca para tela de dispositivos móveis */
+}
+
+#bt_menu{
+        display: none;                                                  /* Desliga o ícone de ativação de menu de dispositivos móveis */
+}
+
+label[for="bt_menu"]{
+        padding: 20px 16px;                                             /* Afastamento vertical e horizontal para centralizar */
+        height: 50px;                                                   /* Altura compatível com a do menu nível 1 */
+        width: 50px;                                                    /* Largura igual a altura para ser quadrado */
+        background-color: #444;                                         /* Acompanha o padrão adotado para o menu nivel 1 */
+        color: white;                                                   /* Acompanha o padrão adotado para o menu nivel 1 */
+        cursor: pointer;                                                /* Para dar cara de clicavel */
+}
+
+label[for="bt_menu"]{
+        display: none;                                                  /* Em telas grandes não exibe o ícone de menu */
+}
+
+#menu .menu {
+        width: 100%;                                                    /* O menu utiliza toda a area disponível da faixa */
+        height: 50px;                                                   /* Barra de menu com 50 pixels de altura (= Logo marca) */
+        background-color: rgb(153, 28, 31);                             /* Cor da QAPLA */
+}
+
+#menu .menu ul{
+        list-style: none;                                               /* Itens de lista que compõe o menu sem bullets */
+        position: relative;                                             /* Garante posicionamento preciso */
+}
+
+#menu .menu ul li {
+        width: 153px;                                                   /* Tamanho do "terreno" de cada opção de menu */
+        float: left;                                                    /* Opções de menu lado a lado */
+}
+
+#menu .menu ul li:hover ul {
+        visibility: visible;                                            /* Mostra as subopções */
+}
+
+#menu .menu ul ul {
+        position: absolute;                                             /* Posicionamento absoluto das subopções */
+        visibility: hidden;                                             /* Oculta as subopções */
+}
+
+#menu .menu ul ul li {
+        float: none;                                                    /* Subopções mostradas não flutuam */
+        border-bottom: 1px solid #eee;                                  /* Delimita separação entre subopções */
+}
+
+#menu .menu ul ul li a {
+        background-color: rgb(153, 28, 31, 0.8)                         /* Subopções recebem alguma opacidade para serem diferenciadas das opções */
+}
+
+#menu .menu a,p {
+        display: block;                                                 /* Link das opções trabalham como caixa e não inline */
+        padding: 16px;                                                  /* Garante um espaçamento mínimo */
+        text-decoration: none;                                          /* Os links não recebem o sublinhado padrão */
+        text-align: center;                                             /* As opções e subopções são apresentadas centralidadas em seus territórios */
+        background-color: rgb(153, 28, 31);                             /* Cor da QAPLA no fundo */
+        color: #eee;                                                    /* Cor das opções cinza muito claro */
+}
+
+#menu .menu p {
+        color: #bbb;
+}
+
+#menu .menu a:hover {
+        background-color: #eee;                                         /* Quando sobrevoadas as opções mudam seu contraste */
+        color: rgb(153, 28, 31);                                        /* Invertendo o cor de fundo com cor de frente */
+}
+
+/* ==== Estilos usados nos formulários de edição ==== */
+/* === Estilos da identificação de base e registro corrente === */
+h2{
+        display: inline-block;
+        margin-bottom: 2px;
+        width: 100%;
+        padding: 5px;
+        font-size: 18px;                                                /* Caracteres de tamanho mediano */
+        font-weight: bold;                                              /* Dados em negrito */
+        color: black;
+        border-color: rgb(153, 28, 31);
+        border-style: solid;
+}
+
+.w50Mod{                                                                /* Para fazer 2 colunas não responsivas */
+        float: left;
+        margin: 0 0px;
+        width: 50.0%;
+}
+
+.search{
+        width: calc(100% - 2px);
+        margin: 0px 2px 2px 0px;
+        border-width: 2px;
+        color: rgb(153, 28, 31);                                        /* Legenda cor QAPLA */
+        text-align: center;
+}
+
+.pri{                                                                   /* Estilos para a primeira coluna da identificação */
+        margin: 0 2px 2px 2px;
+        border-width: 2px 0 2px 2px;
+        color: rgb(153, 28, 31);                                        /* Legenda cor QAPLA */
+        text-align: right;
+}
+
+.seg{                                                                   /* Estilos para a segunda coluna da identificação */
+        margin: 0 1px 2px -2px;
+        border-width: 2px 2px 2px 0;
+        color: #777;                                                    /* Informação em cinza escuro */
+        text-align: left;
+}
+
+.NomBase, .RegEdit{
+        padding: 5px;                                                   /* Preenchimento da moldura */
+        color: rgb(153, 28, 31);                                        /* Cor QAPLA */
+        font-size: 18px;                                                /* Caracteres de tamanho mediano */
+        font-weight: bold;                                              /* Dados em negrito */
+        text-align: center;                                             /* Exibição centralizada dos dados */
+        /*border: 2px solid rgb(153, 28, 31);                           /* Discreta borda na cor QAPLA */
+        border-color: rgb(153, 28, 31);
+        border-style: solid;
+        border-width: 2px;
+}
+
+.RegEdit{
+        margin-bottom: 5px;                                             /* Espaço de guarda para o próximo elemento */
+        border-left: 0;
+}
+
+/* === Estilos dos resultqados de busca === */
+.result {
+        display: block;                                                 /* Link das opções trabalham como caixa e não inline */
+        padding: 10px;                                                  /* Garante um espaçamento mínimo */
+        font-size: 14px;
+        text-decoration: none;                                          /* Os links não recebem o sublinhado padrão */
+        text-align: justify;                                            /* As opções e subopções são apresentadas centralidadas em seus territâ–’rios */
+        color: black;                                                   /* Cor de frente padrão */
+        background-color: #eee;                                         /* Cor de fundo cinza claro */
+}
+
+.result a{
+        /*display: block;                                               /* Link das opções trabalham como caixa e não inline */
+        padding: 1px 2px;                                               /* Garante um espaçamento mínimo */
+        font-size: 14px;
+        text-decoration: none;                                          /* Os links não recebem o sublinhado padrão */
+        text-align: justify;                                            /* As opções e subopções são apresentadas centralidadas em seus territórios */
+        cursor: pointer;
+        color: white;                                                   /* Cor de frente padrão */
+        background-color: rgb(153, 28, 31);                             /* Cor de fundo cinza claro */
+}
+
+/* === Estilos da planilha de entrada de dados === */
+.eLeg{
+        float: left;
+        width: 34%;
+        font-size: 90%;
+        text-align: right;
+}
+
+.eLeg label{
+        font-size: 85%;
+}
+
+
+.eLegP{ /* Legenda de área 100% da tela */
+        float: left;
+        width: 20%;
+        font-size: 90%;
+        text-align: right;
+        //border: 1px solid black;
+}
+
+.eLegP label{ /* Tamanho do fonte da legenda da área 100% da tela */
+        font-size: 85%;
+}
+
+.eLegM{ /* Legenda de área 50% da tela */
+        float: left;
+        width: 40%;
+        font-size: 90%;
+        text-align: right;
+        //border: 1px solid black;
+}
+
+.eLegM label{ /* Tamanho do fonte da legenda da área 50% da tela */
+        font-size: 85%;
+}
+
+.eLegG{
+        float: left;
+        width: 70%;
+        font-size: 90%;
+        text-align: right;
+}
+
+.eLegG label{
+        font-size: 85%;
+}
+
+.eSel{
+        float: left;
+        padding: 0 5px;
+        width: 66%;
+}
+
+.eSelP{
+        float: left;
+        padding: 0 5px;
+        width: 30%;
+}
+
+.eSelM{ /* campo de entrada da área 50% da tela */
+        float: left;
+        padding: 0 5px;
+        width: 60%;
+}
+
+.eSelm{ /* campo de entrada por partes da área 50% da tela */
+        float: left;
+        padding: 0 5px;
+        width: 60%;
+}
+
+.mono-wrapper{
+        //border: 1px dashed red;
+}
+
+.mono-wrapper-l{ /* regiao das legendas da entrada por partes da área 50% da tela */
+      float: left;
+      width: 17%;
+}
+
+.leg-part { /* características para o texto das legendas da entrada por partes da área 50% da tela */
+      background-color: white;
+      color: black;
+      padding: 3px 2px 3px 0;
+      height: 23px;
+      font-size: 85%;
+      text-align: right;
+}
+
+.mono-wrapper-r{ /* regiao das entradas por partes da área 50% da tela */
+      float: right;
+      width: 83%;
+}
+
+.eSelG{ /* região das entradas de dados da área 100% da tela */
+        float: left;
+        padding: 0 5px;
+        width: 80%;
+}
+
+.campos{ /* moldura en torno da área de entrada de dados */
+        margin: 0 2px 0 2px;
+        padding: 5px;
+        border: 2px solid rgb(153, 28, 31);
+}
+
+.campos fieldset{ /* cor dos textos (incluindo legendas) da área de entrada de dados */
+        margin-bottom: 2px;
+        padding: 5px;
+}
+
+.campos fieldset .radio{
+        margin-bottom: 1px;
+        width: 100%;
+        /* border: 1px solid gray; */
+}
+
+::placeholder { /* cor para o placeholder dos campos de entrada de dados */
+        color: rgb(200, 200, 250);
+}
+
+.campos fieldset input[type=text]{ /* caracteristicas dos campos de entrada de dados input type=text */
+        width: 100%;
+        margin-bottom: 1px;
+}
+
+.campos fieldset input[type=radio]{
+        margin: 5px;
+}
+
+.campos fieldset textarea{ /* caracteristicas dos campos de entrada de dados textarea */
+        width: 100%;
+        height: 80px;
+        resize: none;
+        overflow-y: visible;
+}
+
+.campos fieldset .curto{ /* características dos campos de entrada de dados textarea não por partes */
+        width: 100%;
+        height: 41px;
+        resize: none;
+        overflow-y: visible;
+}
+
+.campos fieldset .parted-textarea{ /* características dos campos de entrada de dados textarea por partes */
+        width: 100%;
+        height: 41px;
+        resize: none;
+        overflow-y: visible;
+}
+
+/* ==== Estilos para os controles do formulário ==== */
+.container .controles{
+        margin: 5px 2px;                                                /* Não deixa colar muito entorno */
+        padding: 2px 0;                                                 /* Garante um respiro na vertical */
+        border: 2px solid rgb(153, 28, 31);                             /* Borda dos controles na cor QAPLA */
+}
+
+.container .centro{
+        margin: 5px 2px;                                                /* Não deixa colar muito entorno */
+        padding: 2px 0;                                                 /* Garante um respiro na vertical */
+        text-align: center;
+        border: 2px solid rgb(153, 28, 31);                             /* Borda dos controles na cor QAPLA */
+}
+
+.container .controles button[type=submit]{
+        margin-bottom: 2px;                                             /* espaçamento mínimo dos botões */
+        cursor: pointer;                                                /* Apontador de elemento clicável */
+        border: 1px solid gray;                                         /* Borda cinza discreta nos botões */
+        border-radius: 5px;                                             /* Botões com cantos arredondados */
+        color: white;                                                   /* Inscrições dos botões em branco */
+        height: 25px;                                                   /* Altura dos botões */
+        font-size: 16px;                                                /* Tamanho do texto dos botões */
+        background-color: rgb(153,28,31);                               /* Botões cor QAPLA */
+}
+
+.container .controles .functions,                                       /* Conjunto de botões das funções Go / Save / Delete */
+.container .controles .nav,                                             /* Controles de navegação nos registros */
+.container .controles .search{                                          /* Elementos para busca de registro */
+        float: left;
+        padding: 2px 2%;
+        width: 33.0%;
+        text-align: center;
+}
+
+.container .controles .functions button[type=submit]{
+        margin: 0 1%;
+        width: 30.5%;                                                   /* Largura dos botões de função */
+}
+
+.container .controles .nav button[type=submit]{
+        margin: 0 0.75%;
+        width: 17.0%;                                                   /* Largura dos botões de navegação */
+}
+
+.container .controles .nav input[type=text]{
+        margin: 0 1%;
+        padding: 2px;                                                   /* Garante que texto não gruda na borda */
+        border: 1px solid rgb(153, 28, 31);                             /* Borda da caixa de texto cor QAPLA */
+        border-radius: 3px;                                             /* Caixa levemente arredondada */
+        color: rgb(153, 28, 31);                                        /* Texto da caixa cor QAPLA */
+        width: 18%;                                                     /* Largura da caixa de texto para número do registro */
+        height: 24px;                                                   /* Altura da caixa de texto compatível com os botões */
+        font-size: 16px;                                                /* Tamanho dos caracteres da caixa de texto */
+        background-color: white;                                        /* Caixa de texto com fundo branco */
+}
+
+.container .controles .search button[type=submit]{
+        margin: 0 1%;
+        width: 24%;                                                     /* Largura do botão de busca */
+}
+
+.container .controles .search input[type=text]{
+        margin: 0 1%;
+        padding: 2px;                                                   /* Garante que texto não gruda na borda */
+        border: 1px solid rgb(153, 28, 31);                             /* Borda da caixa de texto cor QAPLA */
+        border-radius: 3px;                                             /* Caixa levemente arredondada */
+        color: rgb(153, 28, 31);                                        /* Texto da caixa cor QAPLA */
+        width: 70%;                                                     /* Largura da caixa de texto da expressão de busca */
+        height: 24px;                                                   /* Altura da caixa de texto compatível com o botão */
+        font-size: 16px;                                                /* Tamanho dos caracteres da caixa de texto */
+        background-color: white;                                        /* Caixa de texto com fundo branco */
+}
+
+/* ==== Estilos para o rodapâ–’ da pâ–’gina ==== */
+footer{
+        background: #bbb;                                               /* Rodapé com fundo cinza neutro */
+}
+
+h3{
+        padding-bottom: 20px;
+        font-size: 0.9em;
+        text-align: center;
+}
+
+h4{
+        padding-top: 20px;
+        font-weight: normal;
+        font-size: 0.8em;
+        text-align: center;
+}
+
+.tampao{                                                                /* Distância mínima entre menu e rodapé */
+        height: 768px;
+}
+
+@media screen and (max-width: 925px){                                   /* Limiar para usar estilos para dispositivos móveis */
+
+        input[type=radio]{
+                margin: 10px;
+        }
+
+        input[type=checkbox]{
+                margin: 10px;
+        }
+
+        .w25c, .w33c, .w50c,
+        .w66c, .w75c{                                                   /* Parar de colunar */
+                float: none;
+                text-align: right;
+                width: 100%;
+        }
+
+        .w25, .w33, .w50,
+        .w66, .w75{                                                     /* Parar de colunar */
+                float: none;
+                width: 100%;
+        }
+
+        .eLeg{
+                width: 40%;
+        }
+
+        .eLegP{
+                width: 30%;
+        }
+
+        .eLegM{
+                width: 50%;
+        }
+
+        .eLegG{
+                width: 70%;
+        }
+
+        .eSel{
+                width: 60%;
+        }
+
+        .eSelP{
+                width: 30%;
+        }
+
+        .eSelM{
+                width: 50%;
+        }
+
+        .eSelm{
+                width: 50%;
+        }
+
+        .eSelG{
+                width: 70%;
+        }
+
+        #menu{
+                float: none;                                            /* área do Menu em coluna única */
+                width: 100%;                                            /* Usando 100% da largtura do dispositivo */
+        }
+
+        #menu h1{
+                display: inline-block;                                  /* Em tela pequena exibe esta logomarca */
+                width: calc(100% - 55px);                               /* Calcula o espaço da logomarca */
+                height: 50px;                                           /* Altura da logomarca */
+                padding-top: 13px;                                      /* Descola um tanto do topo da tela */
+                font-size: 23px;                                        /* Mesma altura de caractere da LogoMarca */
+                text-align: center;                                     /* Centraliza a logomarca */
+                color: #991C1F;                                         /* R153 G28 B31 */
+                /*border: 1px solid red;*/
+        }
+
+        #menu label{
+                display: inline-block;                                  /* Label aceita outros elementos na linha */
+        }
+
+        #bt_menu:checked ~ .menu{
+                margin-left: 0;                                         /* Quando o checkbox está selecionado a margem do menu é 0 (aparece) */
+        }
+
+        label[for="bt_menu"]{
+                display: block;                                         /* Exibe <LABEL> em bloco (caixa) e não inline */
+        }
+
+        .LogoMarca{
+                display: none;                                          /* Em tela de dispositivos móveis não mostra a logo marca à esquerda */
+        }
+
+        #menu .menu{
+                margin-top: 4px;                                        /* Garante uma separação discreta do ícone de menu */
+                margin-left: -100%;                                     /* Menu fica recolhido "fora" da tela à esquerda (checkbox não selecionado)*/
+                transition: all .4s;                                    /* Animação com duração de 400ms */
+        }
+
+        #menu .menu ul li{
+                float: none;                                            /* Opções de menu funcionam como blocos (sem flutuar) */
+                width: 100%;                                            /* "Território" de cada opção é a largura toda da tela do dispositivo mâ–’vel */
+        }
+
+        #menu .menu ul li:hover ul{
+                height: auto;                                           /* Altura das subopções auto ajustável */
+                max-height: 600px;                                      /* Altura total máxima é limitada */
+                overflow-y: auto;                                       /* Se necessitar exibe barra de scroll vertical */
+        }
+
+        #menu .menu ul ul {
+                position: static;                                       /* Posição com comportamento normal */
+                overflow: hidden;                                       /* Esconde as subopções */
+                max-height: 0;                                          /* Limita a altura a 0 pixels quando subopções não são exibidas */
+                transition: all .4s;                                    /* Animação com duraçãoo de 400 ms */
+        }
+
+        .search{
+                width: calc(100% - 3px);
+                margin: 0px 0px 2px 2px;
+                border-width: 2px;
+                color: rgb(153, 28, 31);                                /* Legenda cor QAPLA */
+                text-align: center;
+        }
+
+        .NomBase, .RegEdit{
+                padding: 5px;                                           /* Preenchimento da moldura */
+                color: rgb(153, 28, 31);                                /* Cor QAPLA */
+                font-size: 18px;                                        /* Caracteres de tamanho mediano */
+                font-weight: bold;                                      /* Dados em negrito */
+                text-align: center;                                     /* Exibição centralizada dos dados */
+                border: 2px solid rgb(153, 28, 31);                     /* Discreta borda na cor QAPLA */
+        }
+
+        .RegEdit{
+                margin-bottom: 5px;                                     /* Espaço de guarda para o próximo elemento */
+                border-top: 0;
+        }
+
+        .container .controles .functions{
+                width: 100%;
+        }
+
+        .container .controles .nav{
+                width: 100%;
+        }
+
+        .container .controles .search{
+                width: 100%;
+        }
+
+        .tampao{
+                height: 435px;
+        }
+
+        .container .controles button[type=submit]{
+                height: 31px;                                           /* Altura dos botões */
+        }
+
+        .container .controles .nav input[type=text]{
+                height: 28px;                                           /* Altura da caixa de texto compatível com os botões */
+        }
+
+        .container .controles .search input[type=text]{
+                height: 28px;                                           /* Altura da caixa de texto compatível com o botão */
+        }
+
+}

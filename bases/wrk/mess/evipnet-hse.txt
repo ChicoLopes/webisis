@@ -1,0 +1,13 @@
+<body>
+<p>Prezado,</p>
+
+<p>Esta é uma mensagem automática do sistema de atualização do índice de pesquisa do <b>EvipNet - HSE</b>. </p
+
+<p>Favor verificar no ambiente de homologação do portal o sistema de pesquisa e caso esteja OK solicitar a unidade de infra-estrutura (ITI) através do site <a href="http://suporte.bireme.br/">http://suporte.bireme.br/</a>:</p>
+
+- Transferência do diretório /home/javaapps/iahx-server/indexes/evipnet/hse/ do servidor serverofi4 para o servidor de produção db02dx, apagando conteúdo anterior.<br/>
+
+- Re-inicialização do serviço /etc/init.d/bvs-iahx-server1 no servidor db02dx.<br/>
+
+<p>Atenciosamente,</p>
+Operacao de Fontes de Informacao - OFI

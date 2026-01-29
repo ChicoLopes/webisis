@@ -1,0 +1,88 @@
+# Path de executaveis familia CISIS
+
+# Descricao de caracteristicas de Sabor/Numero Regs/Tamanho Regs/Tamanho Base/Chave curta/Chave longa/Tipo invertido
+#    ISIS: 16M 32k   2G 10/30  nL    ISIS1660: 16M 32k   2G 16/60  nL
+#    LIND: 16M 32k   2G 16/60  nL     LIND512: 16M 32k   2G 16/60   L     LINDG4: 4G 32k 512G 16/10  L   LIND512G4: 4G 32k 512G 16/512  L
+#     FFI: 16M 1M    2G 16/60   L      FFI512: 16M 1M    2G 16/512  L      FFIG4: 4G 1M  512G 16/60  L    FFI512G4: 4G 1M  512G 16/512  L
+#                                                                        FFIG4_4: 4G 4M  512G 16/60  L
+#   ISISG: 16M 32k 512G 10/30  nL
+# BigISIS: 16M 1M  512G 16/256 nL
+#  FFI256: 16M 1M  512G 16/256  L                        <== vai desaparecer com a versao 5.7e
+
+# Versao 4.3a do CISIS - Ate 20071124
+# Versao 5.4.02 pre-release da 5.4.04
+# Versao 5.4.pre05 sera a 5.5a - ativado em 20080930
+# Versao 5.5.pre02 sera a 5.5a - ativado em 20091014
+#	Historico: Eliminou-se o G permanescendo o G4
+# Versao 5.7c sera a 5.54 - ativado em 20100813
+# Versao 5.7c ativada parcialmente em 20120510
+#	Historico: Correcoes no processamento do jdi e socket
+# Versao 5.7e A SER ATIVADA EM DATA OPORTUNA (antecipando novos sabores)
+# --------------------------------------------------
+# Historico: Correcoes no processamento do jdi e socket
+      ISIS='/usr/local/bireme/cisis/5.7c/linux64/isis'
+  ISIS1660='/usr/local/bireme/cisis/5.7c/linux64/isis1660'
+      LIND='/usr/local/bireme/cisis/5.7c/linux64/lind'
+   LIND512='/usr/local/bireme/cisis/5.7c/linux64/lind512'
+    LINDG4='/usr/local/bireme/cisis/5.7c/linux64/lindG4'
+       FFI='/usr/local/bireme/cisis/5.7c/linux64/ffi'
+    FFI512='/usr/local/bireme/cisis/5.7c/linux64/ffi512'
+     FFIG4='/usr/local/bireme/cisis/5.7c/linux64/ffiG4'
+		# FFI256 desaparace na proxima versao
+    FFI256='/usr/local/bireme/cisis/5.7c/linux64/ffiG_1024K-256'
+# Sabores novos da versão 7.e
+   FFI1660="/usr/local/bireme/cisis/5.7e/linux64/ffi1660"
+  FFI512G4="/usr/local/bireme/cisis/5.7e/linux64/ffi512G4"
+   FFIG4_4="/usr/local/bireme/cisis/5.7e/linux64/ffiG4_4"
+     ISISG="/usr/local/bireme/cisis/5.7e/linux64/isisG"
+ LIND512G4="/usr/local/bireme/cisis/5.7e/linux64/lind512G4"
+   BIGISIS="/usr/local/bireme/cisis/5.7e/linux64/BigIsis"
+
+# Simbolos que garantem compatibilidade retroativa
+# ------------------------------------------------
+     CISIS=$ISIS
+ CISIS1660=$ISIS1660
+       LFFI=$FFI
+
+# Versao 7.1d_1 (baseado no CISIS 5.4.pre04)
+# Versao 7.1d (baseado no CISIS 5.4.pre05 - ativado em 20080930
+# Versao 7.1e (baseado no CISIS 5.5.pre02 - ativado em 20091014
+# Versao 7.1e (baseado no CISIS 5.7c - ativado em 20100813
+# Versao 7.1f ativada parcialmente em 20120510
+# Versao 7.1f (baseada no CISIS 5.7e) ativada parcialmente em 20140831
+# -------------------------------------------------------------
+# Historico: Correcoes no processamento do jdi e socket
+     WXISI=$ISIS
+  WXIS1660=$ISIS1660
+     WXISL=$LIND
+  WXISL512=$LIND512
+   WXISLG4=$LINDG4
+     WXISF=$FFI
+  WXISF512=$FFI512
+   WXISFG4=$FFIG4
+	# 256 desaparece na proxima versao
+  WXISF256=$FFI256
+# Sabores novos da versao 5.7e
+ WXISF1660=$FFI1660
+WXISF512G4=$FFI512G4
+ WXISFG4_4=$FFIG4_4
+    WXISIG=$ISISG
+WXISL512G4=$LIND512G4
+   WXISBIG=$BIGISIS
+
+# Coloca tudo disponivel para o ambiente operativo
+# ------------------------------------------------
+# CISIS	.	.	.	.	.
+export 	ISIS	ISIS1660	ISISG		BIGISIS
+export 	LIND		LIND512	LIND512G4	LINDG4
+export 	FFI	FFI1660	FFI512	FFI512G4	FFIG4	FFIG4_4
+export	FFI256
+# CISIS alternativo (compatibilidade retroativa)
+export 	CISIS 	CISIS1660
+export 	LFFI
+# WXIS
+export	WXISI		WXIS1660	WXISIG		WXISBIG
+export	WXISL		WXISL512	WXISL512G4	WXISLG4
+export	WXISF		WXISF1660	WXISF512	WXISF512G4	WXISFG4		WXISFG4_4
+export	WXISF256
+

@@ -1,0 +1,379 @@
+!ID 0
+!v001!034
+!v002!&quot;
+!v011!asc
+!v050!Quotation mark
+!v051!&#34;
+!v059!versao 1.0a^d20100622
+!ID 0
+!v001!038
+!v002!&amp;
+!v011!asc
+!v050!Ampersand
+!v051!&#38;
+!ID 0
+!v001!039
+!v002!&apos;
+!v011!asc
+!v050!Apostrophe
+!v051!&#39;
+!ID 0
+!v001!060
+!v002!&lt;
+!v011!asc
+!v050!Less than
+!v051!&#60;
+!ID 0
+!v001!062
+!v002!&gt;
+!v011!asc
+!v050!Greater than
+!v051!&#62;
+!ID 0
+!v001!128
+!v002!&Ccedil;
+!v011!asc
+!v050!Capital C, cedilla
+!v051!&#199;
+!ID 0
+!v001!129
+!v002!&uuml;
+!v011!asc
+!v050!Small u, umlaut (dierisis)
+!v051!&#252;
+!ID 0
+!v001!130
+!v002!&eacute;
+!v011!asc
+!v050!Small e, acute accent
+!v051!&#233;
+!ID 0
+!v001!131
+!v002!&acirc;
+!v011!asc
+!v050!Small a, circumflex accent
+!v051!&#226;
+!ID 0
+!v001!132
+!v002!&auml;
+!v011!asc
+!v050!Small a, umlaut (dierisis)
+!v051!&#228;
+!ID 0
+!v001!133
+!v002!&agrave;
+!v011!asc
+!v050!Small a, grave accent
+!v051!&#224;
+!ID 0
+!v001!134
+!v002!&aring;
+!v011!asc
+!v050!Small a, ring
+!v051!&#229;
+!ID 0
+!v001!135
+!v002!&ccedil;
+!v011!asc
+!v050!Small c, cedilla
+!v051!&#231;
+!ID 0
+!v001!136
+!v002!&ecirc;
+!v011!asc
+!v050!Small e, circumflex accent
+!v051!&#234;
+!ID 0
+!v001!137
+!v002!&euml;
+!v011!asc
+!v050!Small e, umlaut (dierisis)
+!v051!&#235;
+!ID 0
+!v001!138
+!v002!&egrave;
+!v011!asc
+!v050!Small e, grave accent
+!v051!&#232;
+!ID 0
+!v001!139
+!v002!&iuml;
+!v011!asc
+!v050!Small i, umlaut (dierisis)
+!v051!&#239;
+!ID 0
+!v001!140
+!v002!&icirc;
+!v011!asc
+!v050!Small i, circumflex accent
+!v051!&#238;
+!ID 0
+!v001!141
+!v002!&igrave;
+!v011!asc
+!v050!Small i, grave accent
+!v051!&#236;
+!ID 0
+!v001!142
+!v002!&Auml;
+!v011!asc
+!v050!Capital A, umlaut (dierisis)
+!v051!&#196;
+!ID 0
+!v001!143
+!v002!&Aring;
+!v011!asc
+!v050!Capital A, ring
+!v051!&#197;
+!ID 0
+!v001!144
+!v002!&Eacute;
+!v011!asc
+!v050!Capita E, acute accent
+!v051!&#201;
+!ID 0
+!v001!145
+!v002!&aelig;
+!v011!asc
+!v050!Small ae dipthong (ligature)
+!v051!&#230;
+!ID 0
+!v001!146
+!v002!&AElig;
+!v011!asc
+!v050!Capital AE dipthong (ligature)
+!v051!&#198;
+!ID 0
+!v001!147
+!v002!&ocirc;
+!v011!asc
+!v050!Small o, circumflex accent
+!v051!&#244;
+!ID 0
+!v001!148
+!v002!&ouml;
+!v011!asc
+!v050!Small o, umlaut (dierisis)
+!v051!&#246;
+!ID 0
+!v001!149
+!v002!&ograve;
+!v011!asc
+!v050!Small o, grave accent
+!v051!&#242;
+!ID 0
+!v001!150
+!v002!&ucirc;
+!v011!asc
+!v050!Small u, circumflex accent
+!v051!&#251;
+!ID 0
+!v001!151
+!v002!&ugrave;
+!v011!asc
+!v050!Small u, grave accent
+!v051!&#249;
+!ID 0
+!v001!152
+!v002!&yuml;
+!v011!asc
+!v050!Small y, umlaut (dierisis)
+!v051!&#255;
+!ID 0
+!v001!153
+!v002!&Ouml;
+!v011!asc
+!v050!Capital O, umlaut (dierisis)
+!v051!&#214;
+!ID 0
+!v001!154
+!v002!&Uuml;
+!v011!asc
+!v050!Capital U, umlaut (dierisis)
+!v051!&#220;
+!ID 0
+!v001!155
+!v002!&oslash;
+!v011!asc
+!v050!Small o, slash
+!v051!&#248;
+!ID 0
+!v001!157
+!v002!&Oslash;
+!v011!asc
+!v050!Capital O, slash
+!v051!&#216;
+!ID 0
+!v001!160
+!v002!&aacute;
+!v011!asc
+!v050!Small a, acute accent
+!v051!&#225;
+!ID 0
+!v001!161
+!v002!&iacute;
+!v011!asc
+!v050!Small i, acute accent
+!v051!&#237;
+!ID 0
+!v001!162
+!v002!&oacute;
+!v011!asc
+!v050!Small o, acute accent
+!v051!&#243;
+!ID 0
+!v001!163
+!v002!&uacute;
+!v011!asc
+!v050!Small u, acute accent
+!v051!&#250;
+!ID 0
+!v001!164
+!v002!&ntilde;
+!v011!asc
+!v050!Small n, tilde
+!v051!&#241;
+!ID 0
+!v001!165
+!v002!&Ntilde;
+!v011!asc
+!v050!Capital N, tilde
+!v051!&#209;
+!ID 0
+!v001!181
+!v002!&Aacute;
+!v011!asc
+!v050!Capital A, acute accent
+!v051!&#193;
+!ID 0
+!v001!182
+!v002!&Acirc;
+!v011!asc
+!v050!Capital A, circumflex accent
+!v051!&#194;
+!ID 0
+!v001!183
+!v002!&Agrave;
+!v011!asc
+!v050!Capital A, grave accent
+!v051!&#192;
+!ID 0
+!v001!198
+!v002!&atilde;
+!v011!asc
+!v050!Small a, tilde
+!v051!&#227;
+!ID 0
+!v001!199
+!v002!&Atilde;
+!v011!asc
+!v050!Capital A, tilde
+!v051!&#195;
+!ID 0
+!v001!210
+!v002!&Ecirc;
+!v011!asc
+!v050!Capital E, circumflex accent
+!v051!&#202;
+!ID 0
+!v001!211
+!v002!&Euml;
+!v011!asc
+!v050!Capital E, umlaut (dierisis)
+!v051!&#203;
+!ID 0
+!v001!212
+!v002!&Egrave;
+!v011!asc
+!v050!Capital E, grave accent
+!v051!&#200;
+!ID 0
+!v001!214
+!v002!&Iacute;
+!v011!asc
+!v050!Capital I, acute accent
+!v051!&#205;
+!ID 0
+!v001!215
+!v002!&Icirc;
+!v011!asc
+!v050!Capital I, circumflex accent
+!v051!&#206;
+!ID 0
+!v001!216
+!v002!&Iuml;
+!v011!asc
+!v050!Capital I, umlaut (dierisis)
+!v051!&#207;
+!ID 0
+!v001!222
+!v002!&Igrave;
+!v011!asc
+!v050!Capital I, grave accent
+!v051!&#204;
+!ID 0
+!v001!224
+!v002!&Oacute;
+!v011!asc
+!v050!Capital O, acute accent
+!v051!&#211;
+!ID 0
+!v001!225
+!v002!&szlig;
+!v011!asc
+!v050!Small sharp s, German (sz ligature)
+!v051!&#223;
+!ID 0
+!v001!226
+!v002!&Ocirc;
+!v011!asc
+!v050!Capital O, circumflex accent
+!v051!&#212;
+!ID 0
+!v001!227
+!v002!&Ograve;
+!v011!asc
+!v050!Capital O, grave accent
+!v051!&#210;
+!ID 0
+!v001!228
+!v002!&otilde;
+!v011!asc
+!v050!Small o, tilde
+!v051!&#245;
+!ID 0
+!v001!229
+!v002!&Otilde;
+!v011!asc
+!v050!Capital O, tilde
+!v051!&#213;
+!ID 0
+!v001!233
+!v002!&Uacute;
+!v011!asc
+!v050!Capital U, acute accent
+!v051!&#218;
+!ID 0
+!v001!234
+!v002!&Ucirc;
+!v011!asc
+!v050!Capital U, circumflex accent
+!v051!&#219;
+!ID 0
+!v001!235
+!v002!&Ugrave;
+!v011!asc
+!v050!Capital U, grave accent
+!v051!&#217;
+!ID 0
+!v001!236
+!v002!&yacute;
+!v011!asc
+!v050!Small y, acute accent
+!v051!&#253;
+!ID 0
+!v001!237
+!v002!&Yacute;
+!v011!asc
+!v050!Capital Y, acute accent
+!v051!&#221;

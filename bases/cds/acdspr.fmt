@@ -1,0 +1,26 @@
+ 17 1 2297
+  1  1  1  3  5  7 10 14 14 14 16 16 16 18 18 18 20
+  1 30 55  1  1  1  1  1 25 54  1 25 54  1 25 54 54
+  1  1  1  3  5  7 10 14 14 14 16 16 16 18 18 18 20
+ 16 41 70 14 14 14 14 16 43 74 16 43 74 16 43 74 70
+ 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+ 0 0 0 0 0 0 0 2 2 2 2 0 2 2 1 0 0
+  14  10  14  11  12  11  12  10  17  12  10  17  13  14   6  19  15
+     6    10     6   132   132   132  -227     3     1     3     3     4     2     2     1     5    10
+   0  53  99 110 110 110 138  50  76 139 103 116 154  74  45  66 127
+    0    7    0    0    0    0    0    2    1    2    2    1    1    1    1    0    0
+   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+Data Base NameMFN limitsSave file nameFirst TitleSecond TitleThird TitlePrint formatLine widthNumber of columnsColumn widthLines/page
+First page numberEOC toleranceData indentionSort ?Sort worksheet namePrint file nameEnter lowest and highest MFN of records to be pri
+ntedIf you are printing the results of a search enter name of save file you providedin the ISIS programTitle to be printed at the beg
+inning of listing. Titles starting with * will    repeat at the top of each pageTitle to be printed at the beginning of listing. Titl
+es starting with * will    repeat at the top of each pageTitle to be printed at the beginning of listing. Titles starting with * will
+    repeat at the top of each page1. Actual format (e.g. V01,V02)                2. Pre-defined format (e.g. @XYZ)3. * for compact in
+dexes (see III.2.6 of Reference Manual)Number of print positions in each column of outputNumber of columns per page. If more than 1 t
+hen specify column width as wellWidth of each column. Must be larger than line width. Difference between column width and line width 
+gives spacing between adjacent columnsMaximum number of lines per page. If pages are numbered, two bottom lines will  be used for pag
+e number(a) >0  starting page number              (b) =0  formfeeds without page numbers(c) N   no formfeeds or page numbersMinimum n
+umber of lines which must be available at the bottom of the column     before printing record. If less than this, record will print o
+n new columnIndention of higher level headings and of records under last level headingY if you want to sort records before printingNa
+me of user sort worksheet (only applicable if sorting requested)(a) blank: output will be on PRINT.LST       (b) file name: output wi
+ll be there(c) device name (e.g. LPT1 for direct printing)1/320007017060130N

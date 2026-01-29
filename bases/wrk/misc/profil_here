@@ -1,0 +1,48 @@
+# Aliases adaptados a este servidor
+alias LNK='cd /bases/lnkG4'
+alias LIL='cd /bases/lilG4'
+alias MDL='cd /bases/mdlG4'
+alias IAH='cd /bases/iahx/xml-inbox'
+alias scielo.org='cd /bases/orgG4'
+alias OAI='cd /bases/xml2isis/oai'
+alias BIO='cd /bases/xml2isis/bioetica_e_diplomacia'
+
+alias MX='$FFI/mx'
+alias mxG='$LINDG4/mx'
+alias MXG='$FFIG4/mx'
+alias MX256='$FFI256/mx'
+alias MZ='$FFI/mz'
+alias ld='ls -l | grep "^d"'
+alias loadav='w | grep "load average" | cut -d " " -f "11-"'
+alias ll='ls -alF --color'
+alias ls='ls --color'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Localizacao mostrada constantemente
+PS1='$USER@$HOSTNAME:$PWD $ '
+
+export _BIT0_=1
+export _BIT1_=2
+export _BIT2_=4
+export _BIT3_=8
+export _BIT4_=16
+export _BIT5_=32
+export _BIT6_=64
+export _BIT7_=128
+
+MDL_BASELINE4DIGITOS="1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014"
+MDL_BASELINE2DIGITOS="66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14"
+MDL_ANOCORRENTE4DIGITOS="2015"
+MDL_ANOCORRENTE2DIGITOS="15"
+
+
+# Coloca tudo disponivel para o ambiente operativo
+export	PS1
+export	MDL_BASELINE4DIGITOS
+export	MDL_BASELINE2DIGITOS
+export	MDL_ANOCORRENTE4DIGITOS
+export	MDL_ANOCORRENTE2DIGITOS
+export	_BIT0_	_BIT1_	_BIT2_	_BIT3_
+export	_BIT4_	_BIT5_	_BIT6_	_BIT7_
+

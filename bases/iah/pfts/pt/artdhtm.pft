@@ -1,0 +1,174 @@
+ lw(9999),mpl
+ 
+ /* montagem efetiva do formato de exibicao */
+ proc('d7000d7001d7002'
+
+ /*		v81 - CD-JPG
+  *		v811- CD-TIF
+  *		v303- imagem em CD
+  *		v10 - código
+  */
+ if v81>'' or v811>'' then
+	'<7000 0><font color="red">(cromos/digitalizados no(s) CD:</font></7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0><font color="red">'
+		if v81>'' then v81+|, |
+			if v10>'' and v303='' then ' - Diretório(s): ',v10,')' else ' - Diretório(s): ',v303+|; |,')' fi
+		fi
+		if v811>'' then ' e ' V811+|, |
+			if v10>'' and v303='' then ' - Diretório(s): ',v10,')' else ' - Diretório(s): ' v303+|; |,')' fi
+		fi
+	'</font></7002>'
+ fi
+ 
+ /*		v300- imagem
+  *		v301- imagem cont.1
+  *		v302- imagem cont.2
+  */
+ if v300>'' or v301>'' or v302>'' then
+ 	'<7000 0>&#160;</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0><font color="red">',
+		'(veja imagens e códigos abaixo)'
+	'</font></7002>'
+ fi
+ 
+ /* 	v270- emprestimo / nome/ data
+  */
+ if v270>'' then
+ 	'<7000 0><font color="red">- ATENCAO: EMPRESTADO:</font></7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0><font color="red">',
+		mhu
+		v270+| E |
+		mpl
+	'</font></7002>'
+ fi,
+
+ /*		v100- Origem
+  *		v75 - Localização
+  *		v10 - código
+  *		v80 - caixa
+  *		v90 - gaveta
+  *		v91 - Numero cromo (Fot)
+  *		v101- ISBN-10
+  */
+	'<7000 0>',mhu,v100,mpl,'</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>'
+		'- LOCALIZAÇÃO -<br><br>'
+		'<font color="red">'
+		mhu,v75+| / |,mpl,'<br>'
+		if v80>''  then mhl     'caixa: ',v80+|; |,mpl,'<br>' fi
+		if v90>''  then mhl 'gaveta(s): ',mhu,v90+| / |,mpl,'<br>' fi
+		if v10>''  then mhl      '(cod: ',v10+| ; |,')' else  '(cod: sem registro)'  fi,mpl,'<br>'
+		if v101>'' then mhl     '(ISBN: ',v101+|; |,')' else '(ISBN: sem registro)' fi,mpl,'<br>'
+		if v91>''  then mhl  '(n.cromo: ',v91,')' fi,mpl,'<br>'
+	'</font></7002>'
+
+ /*		v10 - código
+  *		v80 - caixa
+  *		v90 - gaveta
+  *		v91 - Numero cromo (Fot)
+  *		v101- ISBN-10
+  */
+ if v80>'' or v90>'' or v10>'' or v101>'' or v91>'' then 
+	/*		v11 - Titulo
+	 *		v111- Autor
+	 *		v121- Série
+	 *		v14 - Ilustrador
+	 *		v141- Fotógrafo
+	 *		v13 - 
+	 *		v15 - 
+	 *		v72 - 
+	 *		v721- 
+	 *		v722- 
+	 */
+	'<7000 0>Título:</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>',mhu,v11+|; |,mpl,'</7002>'
+	'<7000 0>Autor:</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>',v111+|; |,'</7002>'
+	'<7000 0>série:</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>',v121+|; |,'</7002>'
+	if v14>'' then
+		'<7000 0>Ilustrador:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',mhu,v14+|; |,mpl,'</7002>'
+	fi
+
+	if v141>'' then
+		'<7000 0>Fotógrafo:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',mhu,v141+|; |,mpl,'</7002>'
+	fi
+	'<7000 0>Tipo:</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>',mhu,v12+|; |,mpl,'</7002>'
+	'<7000 0>Produto:</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>',mhu,v13^a+|;&nbsp;&nbsp;|,mpl,'</7002>'
+
+	if v13^b>'' then 
+		'<7000 0>Uso:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',mhu,v13^b+|; |,mpl,'</7002>'
+	fi
+	if v15>'' then
+		'<7000 0>data/quantidade:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',mhu,v15+| e |,mpl,'</7002>'
+	fi
+	if v72>'' or v721>'' or v722>'' then
+		'<7000 0><font color="red">cromos/livro:</font></7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',mhl,v72+|; |,"; "v721+|; |, "; "v722+|; |,mpl,'</7002>'
+	fi
+   /*	v300 - imagem			SubA com o texto do link SubB com o nome do arquivo
+	*	v301 - imagem cont.1	SubA com o texto do link SubB com o nome do arquivo
+	*	v302 - imagem cont.2	SubA com o texto do link SubB com o nome do arquivo
+	*/
+	if v300>'' or v301>'' or v302>'' then 
+		'<7000 0><font color="red">cromos/digitalizados:</font></7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>'
+			if v300^a>'' then ('<a href="/iah/image/art/',v300^b,'" target="_blank">',v300^a,'</a><br>') fi
+			if v301^a>'' then ('<a href="/iah/image/art/',v301^b,'" target+"_blank">',v301^a,'</a><br>') fi
+			if v302^a>'' then ('<a href="/iah/image/art/',v302^b,'" target+"_blank">',v302^a,'</a><br>') fi
+		'</7002>'
+	fi
+ fi
+
+ /*		v70 - 
+  *		v271- 
+  */
+ if v70>'' then
+	'<7000 0>Notas:</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>',mhl,v70,mpl,'</7002>'
+ fi
+ if v271>'' then
+	'<7000 0>Material entregue por:</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>',mhl,v271+|; |,mpl,'</7002>'
+ fi
+
+ '<7000 0>&#160;</7000>'
+ '<7001 0>&#160;</7001>'
+ '<7002 0>&#160;</7002>'
+
+ )
+
+ /* Exibicao efetiva dos dados montados acima */
+ '<table width="100%" cellspacing="0" cellpadding="1" border="0">',/
+ (
+  '<tr valign="top">',/
+  ' <td width="25%"  align="right"><font face="verdana"><font size="1">',mpl,v7000,'</td>',/
+  ' <td width="1"   align="center"><font face="verdana"><font size="1">',mpl,v7001,'</td>',/
+  ' <td               align="left"><font face="verdana"><font size="1">',mpl,v7002,'</td>',/
+  '</tr>',/
+ )
+ '</table>',/
+

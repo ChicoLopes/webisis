@@ -1,0 +1,510 @@
+!ID 0
+!v001!&#34;
+!v002!034
+!v021!asc
+!v050!Quotation mark
+!ID 0
+!v001!&#38;
+!v002!038
+!v021!asc
+!v050!Ampersand
+!ID 0
+!v001!&#39;
+!v002!039
+!v021!asc
+!v050!Apostrophe
+!ID 0
+!v001!&#8211;
+!v002!045
+!v021!asc
+!v050!En dash
+!ID 0
+!v001!&#60;
+!v002!060
+!v021!asc
+!v050!Less than
+!ID 0
+!v001!&#62;
+!v002!062
+!v021!asc
+!v050!Greater than
+!ID 0
+!v001!&#160;
+!v002!160
+!v021!asc
+!v050!Non-breaking space
+!ID 0
+!v001!&#161;
+!v002!161
+!v021!asc
+!v050!Inverted exclamation
+!ID 0
+!v001!&#162;
+!v002!162
+!v021!asc
+!v050!Cent sign
+!ID 0
+!v001!&#163;
+!v002!163
+!v021!asc
+!v050!Pound sterling sign
+!ID 0
+!v001!&#164;
+!v002!164
+!v021!asc
+!v050!General currency sign
+!ID 0
+!v001!&#165;
+!v002!165
+!v021!asc
+!v050!Yen sign
+!ID 0
+!v001!&#166;
+!v002!166
+!v021!asc
+!v050!Broken vertical bar
+!ID 0
+!v001!&#167;
+!v002!167
+!v021!asc
+!v050!Section sign
+!ID 0
+!v001!&#168;
+!v002!168
+!v021!asc
+!v050!Umlaut (dierisis)
+!ID 0
+!v001!&#169;
+!v002!169
+!v021!asc
+!v050!Copyright
+!ID 0
+!v001!&#170;
+!v002!170
+!v021!asc
+!v050!Feminine ordinal
+!ID 0
+!v001!&#171;
+!v002!171
+!v021!asc
+!v050!Left angle quote, guillemot left
+!ID 0
+!v001!&#172;
+!v002!172
+!v021!asc
+!v050!Not sign
+!ID 0
+!v001!&#173;
+!v002!173
+!v021!asc
+!v050!Soft hyphen
+!ID 0
+!v001!&#174;
+!v002!174
+!v021!asc
+!v050!Registered trademark
+!ID 0
+!v001!&#175;
+!v002!175
+!v021!asc
+!v050!Macron accent
+!ID 0
+!v001!&#176;
+!v002!176
+!v021!asc
+!v050!Degree sign
+!ID 0
+!v001!&#177;
+!v002!177
+!v021!asc
+!v050!Plus or minus
+!ID 0
+!v001!&#178;
+!v002!178
+!v021!asc
+!v050!Superscript two
+!ID 0
+!v001!&#179;
+!v002!179
+!v021!asc
+!v050!Superscript three
+!ID 0
+!v001!&#180;
+!v002!180
+!v021!asc
+!v050!Acute accent
+!ID 0
+!v001!&#181;
+!v002!181
+!v021!asc
+!v050!Micro sign
+!ID 0
+!v001!&#182;
+!v002!182
+!v021!asc
+!v050!Paragraph sign
+!ID 0
+!v001!&#183;
+!v002!183
+!v021!asc
+!v050!Middle dot
+!ID 0
+!v001!&#184;
+!v002!184
+!v021!asc
+!v050!Cedilla
+!ID 0
+!v001!&#185;
+!v002!185
+!v021!asc
+!v050!Superscript one
+!ID 0
+!v001!&#186;
+!v002!186
+!v021!asc
+!v050!Masculine ordinal
+!ID 0
+!v001!&#187;
+!v002!187
+!v021!asc
+!v050!Right angle quote, guillemot right
+!ID 0
+!v001!&#188;
+!v002!188
+!v021!asc
+!v050!Fraction (one quarter)
+!ID 0
+!v001!&#189;
+!v002!189
+!v021!asc
+!v050!Fraction (one half)
+!ID 0
+!v001!&#190;
+!v002!190
+!v021!asc
+!v050!Fraction (three quarters)
+!ID 0
+!v001!&#191;
+!v002!191
+!v021!asc
+!v050!Inverted question mark
+!ID 0
+!v001!&#192;
+!v002!192
+!v021!asc
+!v050!Capital A, grave accent
+!ID 0
+!v001!&#193;
+!v002!193
+!v021!asc
+!v050!Capital A, acute accent
+!ID 0
+!v001!&#194;
+!v002!194
+!v021!asc
+!v050!Capital A, circumflex accent
+!ID 0
+!v001!&#195;
+!v002!195
+!v021!asc
+!v050!Capital A, tilde
+!ID 0
+!v001!&#196;
+!v002!196
+!v021!asc
+!v050!Capital A, umlaut (dierisis)
+!ID 0
+!v001!&#197;
+!v002!197
+!v021!asc
+!v050!Capital A, ring
+!ID 0
+!v001!&#198;
+!v002!198
+!v021!asc
+!v050!Capital AE dipthong (ligature)
+!ID 0
+!v001!&#199;
+!v002!199
+!v021!asc
+!v050!Capital C, cedilla
+!ID 0
+!v001!&#200;
+!v002!200
+!v021!asc
+!v050!Capital E, grave accent
+!ID 0
+!v001!&#201;
+!v002!201
+!v021!asc
+!v050!Capita E, acute accent
+!ID 0
+!v001!&#202;
+!v002!202
+!v021!asc
+!v050!Capital E, circumflex accent
+!ID 0
+!v001!&#203;
+!v002!203
+!v021!asc
+!v050!Capital E, umlaut (dierisis)
+!ID 0
+!v001!&#204;
+!v002!204
+!v021!asc
+!v050!Capital I, grave accent
+!ID 0
+!v001!&#205;
+!v002!205
+!v021!asc
+!v050!Capital I, acute accent
+!ID 0
+!v001!&#206;
+!v002!206
+!v021!asc
+!v050!Capital I, circumflex accent
+!ID 0
+!v001!&#207;
+!v002!207
+!v021!asc
+!v050!Capital I, umlaut (dierisis)
+!ID 0
+!v001!&#208;
+!v002!208
+!v021!asc
+!v050!Capital Eth, Icelandic
+!ID 0
+!v001!&#209;
+!v002!209
+!v021!asc
+!v050!Capital N, tilde
+!ID 0
+!v001!&#210;
+!v002!210
+!v021!asc
+!v050!Capital O, grave accent
+!ID 0
+!v001!&#211;
+!v002!211
+!v021!asc
+!v050!Capital O, acute accent
+!ID 0
+!v001!&#212;
+!v002!212
+!v021!asc
+!v050!Capital O, circumflex accent
+!ID 0
+!v001!&#213;
+!v002!213
+!v021!asc
+!v050!Capital O, tilde
+!ID 0
+!v001!&#214;
+!v002!214
+!v021!asc
+!v050!Capital O, umlaut (dierisis)
+!ID 0
+!v001!&#215;
+!v002!215
+!v021!asc
+!v050!Multiply sign
+!ID 0
+!v001!&#216;
+!v002!216
+!v021!asc
+!v050!Capital O, slash
+!ID 0
+!v001!&#217;
+!v002!217
+!v021!asc
+!v050!Capital U, grave accent
+!ID 0
+!v001!&#218;
+!v002!218
+!v021!asc
+!v050!Capital U, acute accent
+!ID 0
+!v001!&#219;
+!v002!219
+!v021!asc
+!v050!Capital U, circumflex accent
+!ID 0
+!v001!&#220;
+!v002!220
+!v021!asc
+!v050!Capital U, umlaut (dierisis)
+!ID 0
+!v001!&#221;
+!v002!221
+!v021!asc
+!v050!Capital Y, acute accent
+!ID 0
+!v001!&#222;
+!v002!222
+!v021!asc
+!v050!Capital Thorn, Icelandic
+!ID 0
+!v001!&#223;
+!v002!223
+!v021!asc
+!v050!Small sharp s, German (sz ligature)
+!ID 0
+!v001!&#224;
+!v002!224
+!v021!asc
+!v050!Small a, grave accent
+!ID 0
+!v001!&#225;
+!v002!225
+!v021!asc
+!v050!Small a, acute accent
+!ID 0
+!v001!&#226;
+!v002!226
+!v021!asc
+!v050!Small a, circumflex accent
+!ID 0
+!v001!&#227;
+!v002!227
+!v021!asc
+!v050!Small a, tilde
+!ID 0
+!v001!&#228;
+!v002!228
+!v021!asc
+!v050!Small a, umlaut (dierisis)
+!ID 0
+!v001!&#229;
+!v002!229
+!v021!asc
+!v050!Small a, ring
+!ID 0
+!v001!&#230;
+!v002!230
+!v021!asc
+!v050!Small ae dipthong (ligature)
+!ID 0
+!v001!&#231;
+!v002!231
+!v021!asc
+!v050!Small c, cedilla
+!ID 0
+!v001!&#232;
+!v002!232
+!v021!asc
+!v050!Small e, grave accent
+!ID 0
+!v001!&#233;
+!v002!233
+!v021!asc
+!v050!Small e, acute accent
+!ID 0
+!v001!&#234;
+!v002!234
+!v021!asc
+!v050!Small e, circumflex accent
+!ID 0
+!v001!&#235;
+!v002!235
+!v021!asc
+!v050!Small e, umlaut (dierisis)
+!ID 0
+!v001!&#236;
+!v002!236
+!v021!asc
+!v050!Small i, grave accent
+!ID 0
+!v001!&#237;
+!v002!237
+!v021!asc
+!v050!Small i, acute accent
+!ID 0
+!v001!&#238;
+!v002!238
+!v021!asc
+!v050!Small i, circumflex accent
+!ID 0
+!v001!&#239;
+!v002!239
+!v021!asc
+!v050!Small i, umlaut (dierisis)
+!ID 0
+!v001!&#240;
+!v002!240
+!v021!asc
+!v050!Small eth, Icelandic
+!ID 0
+!v001!&#241;
+!v002!241
+!v021!asc
+!v050!Small n, tilde
+!ID 0
+!v001!&#242;
+!v002!242
+!v021!asc
+!v050!Small o, grave accent
+!ID 0
+!v001!&#243;
+!v002!243
+!v021!asc
+!v050!Small o, acute accent
+!ID 0
+!v001!&#244;
+!v002!244
+!v021!asc
+!v050!Small o, circumflex accent
+!ID 0
+!v001!&#245;
+!v002!245
+!v021!asc
+!v050!Small o, tilde
+!ID 0
+!v001!&#246;
+!v002!246
+!v021!asc
+!v050!Small o, umlaut (dierisis)
+!ID 0
+!v001!&#247;
+!v002!247
+!v021!asc
+!v050!Division sign
+!ID 0
+!v001!&#248;
+!v002!248
+!v021!asc
+!v050!Small o, slash
+!ID 0
+!v001!&#249;
+!v002!249
+!v021!asc
+!v050!Small u, grave accent
+!ID 0
+!v001!&#250;
+!v002!250
+!v021!asc
+!v050!Small u, acute accent
+!ID 0
+!v001!&#251;
+!v002!251
+!v021!asc
+!v050!Small u, circumflex accent
+!ID 0
+!v001!&#252;
+!v002!252
+!v021!asc
+!v050!Small u, umlaut (dierisis)
+!ID 0
+!v001!&#253;
+!v002!253
+!v021!asc
+!v050!Small y, acute accent
+!ID 0
+!v001!&#254;
+!v002!254
+!v021!asc
+!v050!Small thorn, Icelandic
+!ID 0
+!v001!&#255;
+!v002!255
+!v021!asc
+!v050!Small y, umlaut (dierisis)

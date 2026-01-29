@@ -1,0 +1,565 @@
+!ID 0
+!v001!128
+!v002!c387
+!v011!asc
+!v021!hex
+!v041!&#199;
+!v042!&Ccedil;
+!v051!C cedilha maiusculo
+!v052!Latin Capital Letter C with Cedilla
+!v059!versao 1.0a^d20080317
+!ID 0
+!v001!129
+!v002!c3bc
+!v011!asc
+!v021!hex
+!v041!&#252;
+!v042!&uuml;
+!v051!u minusculo acento trema
+!v052!Latin Small Letter u with Diaeresis
+!ID 0
+!v001!130
+!v002!c3a9
+!v011!asc
+!v021!hex
+!v041!&#233;
+!v042!&eacute;
+!v051!e minusculo acento agudo
+!v052!Latin Small Letter e with Acute
+!ID 0
+!v001!131
+!v002!c3a2
+!v011!asc
+!v021!hex
+!v041!&#226;
+!v042!&acirc;
+!v051!a minusculo acento circunflexo
+!v052!Latin Small Letter a with Circumflex
+!ID 0
+!v001!132
+!v002!c3a4
+!v011!asc
+!v021!hex
+!v041!&#228;
+!v042!&auml;
+!v051!a minusculo acento trema
+!v052!Latin Small Letter a with Diaeresis
+!ID 0
+!v001!133
+!v002!c3a0
+!v011!asc
+!v021!hex
+!v041!&#224;
+!v042!&agrave;
+!v051!a minusculo acento grave
+!v052!Latin Small Letter a with Grave
+!ID 0
+!v001!134
+!v002!c3a5
+!v011!asc
+!v021!hex
+!v041!&#229;
+!v042!&aring;
+!v051!a minusculo acento anel
+!v052!Latin Small Letter a with Ring Above
+!ID 0
+!v001!135
+!v002!c3a7
+!v011!asc
+!v021!hex
+!v041!&#231;
+!v042!&ccedil;
+!v051!c cedilha minusculo
+!v052!Latin Small Letter c with Cedilla
+!ID 0
+!v001!136
+!v002!c3aa
+!v011!asc
+!v021!hex
+!v041!&#234;
+!v042!&ecirc;
+!v051!e minusculo acento circunflexo
+!v052!Latin Small Letter e with Circumflex
+!ID 0
+!v001!137
+!v002!c3ab
+!v011!asc
+!v021!hex
+!v041!&#235;
+!v042!&euml;
+!v051!e minusculo acento trema
+!v052!Latin Small Letter e with Diaeresis
+!ID 0
+!v001!138
+!v002!c3a8
+!v011!asc
+!v021!hex
+!v041!&#232;
+!v042!&egrave;
+!v051!e minusculo acento grave
+!v052!Latin Small Letter e with Grave
+!ID 0
+!v001!139
+!v002!c3af
+!v011!asc
+!v021!hex
+!v041!&#239;
+!v042!&iuml;
+!v051!i minusculo acento trema
+!v052!Latin Small Letter i with Diaeresis
+!ID 0
+!v001!140
+!v002!c3ae
+!v011!asc
+!v021!hex
+!v041!&#238;
+!v042!&icirc;
+!v051!i minusculo acento circunflexo
+!v052!Latin Small Letter i with Circumflex
+!ID 0
+!v001!141
+!v002!c3ac
+!v011!asc
+!v021!hex
+!v041!&#236;
+!v042!&igrave;
+!v051!i minusculo acento grave
+!v052!Latin Small Letter i with Grave
+!ID 0
+!v001!142
+!v002!c384
+!v011!asc
+!v021!hex
+!v041!&#196;
+!v042!&Auml;
+!v051!A maiusculo acento trema
+!v052!Latin Capital Letter A with Diaeresis
+!ID 0
+!v001!143
+!v002!c385
+!v011!asc
+!v021!hex
+!v041!&#197;
+!v042!&Aring;
+!v051!A maiusculo acento anel
+!v052!Latin Capital Letter A with Ring Above
+!ID 0
+!v001!144
+!v002!c389
+!v011!asc
+!v021!hex
+!v041!&#201;
+!v042!&Eacute;
+!v051!E maiusculo acento agudo
+!v052!Latin Capital Letter E with Acute
+!ID 0
+!v001!145
+!v002!c3a6
+!v011!asc
+!v021!hex
+!v041!&#230;
+!v042!&aelig;
+!v051!ae minusculo
+!v052!Latin Small Letter ae
+!ID 0
+!v001!146
+!v002!c386
+!v011!asc
+!v021!hex
+!v041!&#198;
+!v042!&AElig;
+!v051!AE maiusculo
+!v052!Latin Capital Letter AE
+!ID 0
+!v001!147
+!v002!c3b4
+!v011!asc
+!v021!hex
+!v041!&#244;
+!v042!&ocirc;
+!v051!o minusculo acento circunflexo
+!v052!Latin Small Letter o with Circumflex
+!ID 0
+!v001!148
+!v002!c3b6
+!v011!asc
+!v021!hex
+!v041!&#246;
+!v042!&ouml;
+!v051!o minusculo acento trema
+!v052!Latin Small Letter o with Diaeresis
+!ID 0
+!v001!149
+!v002!c3b2
+!v011!asc
+!v021!hex
+!v041!&#242;
+!v042!&ograve;
+!v051!o minusculo acento grave
+!v052!Latin Small Letter o with Grave
+!ID 0
+!v001!150
+!v002!c3bb
+!v011!asc
+!v021!hex
+!v041!&#251;
+!v042!&ucirc;
+!v051!u minusculo acento circunflexo
+!v052!Latin Small Letter u with Circumflex
+!ID 0
+!v001!151
+!v002!c3b9
+!v011!asc
+!v021!hex
+!v041!&#249;
+!v042!&ugrave;
+!v051!u minusculo acento grave
+!v052!Latin Small Letter u with Grave
+!ID 0
+!v001!152
+!v002!c3bf
+!v011!asc
+!v021!hex
+!v041!&#255;
+!v042!&yuml;
+!v051!y minusculo acento trema
+!v052!Latin Small Letter y with Diaeresis
+!ID 0
+!v001!153
+!v002!c396
+!v011!asc
+!v021!hex
+!v041!&#214;
+!v042!&Ouml;
+!v051!O maiusculo acento trema
+!v052!Latin Capital Letter O wiht Diaeresdis
+!ID 0
+!v001!154
+!v002!c39c
+!v011!asc
+!v021!hex
+!v041!&#220;
+!v042!&Uuml;
+!v051!U maiusculo acento trema
+!v052!Latin Capital Letter U with Diaeresis
+!ID 0
+!v001!155
+!v002!c2a2
+!v011!asc
+!v021!hex
+!v041!&#162;
+!v042!&cent;
+!v051!Centavos
+!v052!Cent Sign
+!ID 0
+!v001!156
+!v002!c2a3
+!v011!asc
+!v021!hex
+!v041!&#163;
+!v042!&pound;
+!v051!Libras
+!v052!Pound Sign
+!ID 0
+!v001!157
+!v002!c2a5
+!v011!asc
+!v021!hex
+!v041!&#165;
+!v042!&yen;
+!v051!Yene
+!v052!Yen Sing
+!ID 0
+!v001!159
+!v002!c283
+!v011!asc
+!v021!hex
+!v051!funcao de
+!v052!florin
+!ID 0
+!v001!160
+!v002!c3a1
+!v011!asc
+!v021!hex
+!v041!&#225;
+!v042!&aacute;
+!v051!a minusculo acento agudo
+!v052!Latin Small Letter a with Acute
+!ID 0
+!v001!161
+!v002!c3ad
+!v011!asc
+!v021!hex
+!v041!&#237;
+!v042!&iacute;
+!v051!i minusculo acento agudo
+!v052!Latin Small Letter i with Acute
+!ID 0
+!v001!162
+!v002!c3b3
+!v011!asc
+!v021!hex
+!v041!&#243;
+!v042!&oacute;
+!v051!o minusculo acento agudo
+!v052!Latin Small Letter o with Acute
+!ID 0
+!v001!163
+!v002!c3ba
+!v011!asc
+!v021!hex
+!v041!&#250;
+!v042!&uacute;
+!v051!u minusculo acento agudo
+!v052!Latin Small Letter u with Acute
+!ID 0
+!v001!164
+!v002!c3b1
+!v011!asc
+!v021!hex
+!v041!&#241;
+!v042!&ntilde;
+!v051!n minusculo acento til
+!v052!Latin Small Letter n with Tilde
+!ID 0
+!v001!165
+!v002!c391
+!v011!asc
+!v021!hex
+!v041!&#209;
+!v042!&Ntilde;
+!v051!N maiusculo acento til
+!v052!Latin Capital Letter N with Tilde
+!ID 0
+!v001!166
+!v002!c2aa
+!v011!asc
+!v021!hex
+!v041!&#170;
+!v042!&ordf;
+!v051!Ordinal feminino
+!v052!Feminine Ordinal Indicator
+!ID 0
+!v001!167
+!v002!c2ba
+!v011!asc
+!v021!hex
+!v041!&#186;
+!v042!&ordm;
+!v051!Ordinal masculino
+!v052!Masculine Ordinal Indicator
+!ID 0
+!v001!168
+!v002!c2bf
+!v011!asc
+!v021!hex
+!v041!&#191;
+!v042!&iquest;
+!v051!Interrogacao invertida
+!v052!Inverted Question Mark
+!ID 0
+!v001!169
+!v002!e28c90
+!v011!asc
+!v021!hex
+!v041!&#8976;
+!v042!
+!v051!not reverso
+!v052!Reversed Not Sign
+!ID 0
+!v001!170
+!v002!c2ac
+!v011!asc
+!v021!hex
+!v041!&#172;
+!v042!&not;
+!v051!Not
+!v052!Not Sign
+!ID 0
+!v001!171
+!v002!c2bd
+!v011!asc
+!v021!hex
+!v041!&#189;
+!v042!&frac12;
+!v051!Meio
+!v052!Vulgar Fraction One Half
+!ID 0
+!v001!172
+!v002!c2bc
+!v011!asc
+!v021!hex
+!v041!&#188;
+!v042!&frac14;
+!v051!Um quarto
+!v052!Vulgar Fraction One Quarter
+!ID 0
+!v001!173
+!v002!c2a1
+!v011!asc
+!v021!hex
+!v041!&#161;
+!v042!&iexcl;
+!v051!Exclamacao invertida
+!v052!Inverted Exclamation Mark
+!ID 0
+!v001!174
+!v002!c2ab
+!v011!asc
+!v021!hex
+!v041!&#171;
+!v042!&laquo;
+!v051!Left-Pointing Double Angle Quotation Mark
+!v052!Left-Pointing Double Angle Quotation Mark
+!ID 0
+!v001!175
+!v002!c2bb
+!v011!asc
+!v021!hex
+!v041!&#187;
+!v042!&raquo;
+!v051!Right-Pointing Double Angle Quotation Mark
+!v052!Right-Pointing Double Angle Quotation Mark
+!ID 0
+!v001!225
+!v002!c39f
+!v011!asc
+!v021!hex
+!v041!&#223;
+!v042!&szlig;
+!v051!Latin Small Letter SHARP S
+!v052!Latin Small Letter SHARP S
+!ID 0
+!v001!230
+!v002!c2b5
+!v011!asc
+!v021!hex
+!v041!&#181;
+!v042!&micro;
+!v051!Micro
+!v052!Micro Sing
+!ID 0
+!v001!234
+!v002!e284a6
+!v011!asc
+!v021!hex
+!v041!&#8486;
+!v051!Ohm
+!v052!OHM sing
+!ID 0
+!v001!240
+!v002!e289a1
+!v011!asc
+!v021!hex
+!v041!&#8801;
+!v042!&equiv;
+!v051!identico
+!v052!Identical to
+!ID 0
+!v001!241
+!v002!c2b1
+!v011!asc
+!v021!hex
+!v041!&#177;
+!v042!&plusmn;
+!v051!Mais ou Menos
+!v052!Plus-Minus Sing
+!ID 0
+!v001!242
+!v002!e289a5
+!v011!asc
+!v021!hex
+!v041!&#8805;
+!v042!&ge;
+!v051!maior ou igual
+!v052!Greather-Than or Equal to
+!ID 0
+!v001!243
+!v002!e289a4
+!v011!asc
+!v021!hex
+!v041!&#8804;
+!v042!&le;
+!v051!menor ou igual
+!v052!Less-Than or Equal to
+!ID 0
+!v001!244
+!v002!e28ca0
+!v011!asc
+!v021!hex
+!v041!&#8992;
+!v042!
+!v051!top do sinal de integral
+!v052!Top Half Integral
+!ID 0
+!v001!245
+!v002!e28ca1
+!v011!asc
+!v021!hex
+!v041!&#8993;
+!v042!
+!v051!fundo do sinal de integral
+!v052!Bottom Half Integral
+!ID 0
+!v001!246
+!v002!c3b7
+!v011!asc
+!v021!hex
+!v041!&#247;
+!v042!&divide;
+!v051!Divisao
+!v052!Division Sign
+!ID 0
+!v001!247
+!v002!e28988
+!v011!asc
+!v021!hex
+!v041!&#8776;
+!v042!&asymp;
+!v051!aproximado
+!v052!Almost Equal to
+!ID 0
+!v001!248
+!v002!c2b0
+!v011!asc
+!v021!hex
+!v041!&#176;
+!v042!&deg;
+!v051!Graus
+!v052!Degree Sign
+!ID 0
+!v001!250
+!v002!c2b7
+!v011!asc
+!v021!hex
+!v041!&#183;
+!v042!&middot;
+!v051!Ponto central
+!v052!Middle Dot
+!ID 0
+!v001!251
+!v002!e2889a
+!v011!asc
+!v021!hex
+!v041!&#8730;
+!v042!&radic;
+!v051!Raiz quadrada
+!v052!Square Root
+!ID 0
+!v001!252
+!v002!e281bf
+!v011!asc
+!v021!hex
+!v041!&#8319;
+!v042!
+!v051!Elevado a n
+!v052!Superscript Three
+!ID 0
+!v001!253
+!v002!c2b2
+!v011!asc
+!v021!hex
+!v041!&#178;
+!v042!&sup2;
+!v051!Elevado ao quadrado dois
+!v052!Superscript Two

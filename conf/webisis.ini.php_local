@@ -1,0 +1,103 @@
+<?php
+
+  /* *************************************************** *
+   *                                                     *
+   *  Inicia por ler variaveis de ambiente do servidor   *
+   *                                                     *
+   * *************************************************** */
+
+  // Diretorio raiz do Site
+  $rootDir = $_SERVER['DOCUMENT_ROOT'];
+
+  /*
+   *******************************************************
+   *                                                     *
+   * Declaracao de constantes de configuracao do WebISIS *
+   *                                                     *
+   *******************************************************
+   */
+  define("DATABASE",           'webisis');
+  define("DBUSER",             'adm_WebISIS');
+  define("DBPASS",             'U55_r3l1@nt');
+  define("APLICACAO",          'WebISIS');
+  define("HOMESITE",           'http://webisis/');
+  define("DEFAULT_USER_LEVEL", 9);
+  define("LOCATION",           'America/Sao_Paulo');
+  define("ENTGESTORA",         'QAPLA');
+  define("SUPERUSER",          'adm_WebISIS');
+  define("TIMO",               5);
+  define("TIMSESSION",       180);
+  define("LOG_OPR",            "$rootDir/logs/webisis-operacao");
+  define("LOG_SEG",            "$rootDir/logs/webisis-seguranca");
+
+  /*
+   *******************************************************
+   *                                                     *
+   * Declaracao de constantes de configuracao do WebISIS *
+   *                                                     *
+   *******************************************************
+   */
+  /*
+   *******************************************************
+   *                                                     *
+   *   Configuracao de caminhos e arquivos do sistema    *
+   *                                                     *
+   *******************************************************
+   */
+
+  // Biblioteca de funcoes gerais
+  $bibGenFN = $rootDir . "/phps/bibGP.inc.php";
+
+  // Biblioteca de funcoes CDS/ISIS
+  $bibCISIS = $rootDir . "/phps/fnCDSISIS.php";
+
+  // Paginas principais do sistema
+  $pg_start = "/index.php";			// login	Pag com formulario de Login Demo
+  $pg_hwork = "phps/menu.php";			// aplic	Pag de Trabalho efetivo
+  $pg_admin = "phps/wi-admin.php";		// aplic	Pag de administracao do sistema
+
+  // Paginas de sinalizacao do Login               1234567890	12345	Descricao
+  $pg_wilogin = "/index.php";			// autenticar	login	1 Pag c formulario de login
+  $pg_dberror = "phps/logon/errodeconexao.php";	// erro_dbase	dberr	a Pag q informa problemas ao conectar no banco de dados
+  $pg_usrnotf = "phps/logon/user_notfound.php";	// usernfound	usrnf	b Pag q informa usuario nao encontrado e da alternativas
+  $pg_usrnofd = "phps/logon/userDnotfound.php";	// usernfound	usrnf	b Pag q informa usuario nao encontrado (demo version)
+  $pg_wrongps = "phps/logon/wrongPassword.php";	// wrongpassw	wrgps	c Pag q informa erro na senha e da alternativas
+  $pg_wrongas = "phps/logon/wrongResponse.php";	// wronganswe	wrgps	c Pag q informa erro na resposta a pergunta secreta
+  $pg_wrongdp = "phps/logon/wrongDPasswrd.php";	// wrongpassw	wrgpd	c Pag q informa erro na senha (demo version)
+  $pg_loginok = "phps/logon/loginokpremnu.php";	// autenticok	logok	2 Pag q sinaliza login ok e desvia para a tarefa do sistema
+  $pg_veruser = "phps/logon/verifica_User.php";	// verif_user	pergs	3 Pag c formulario de verificar identidade do usuario
+  $pg_frmpass = "phps/logon/form_cadastro.php";	// formxpassw	mudas	4 Pag c formulario de cadastro de usuario
+  $pg_userfnd = "phps/logon/errodeescrita.php";	// cadast_nok	cadnk	d Pag q sinaliza erro ao escrever no Banco de Dados
+  $pg_usrfail = "phps/logon/nml_userfound.php"; // userfailed   ufail     Pag q sinaliza que o usuario ja existe no bando de dados
+  $pg_cadasok = "phps/logon/cadast_userok.php";	// cadast__ok	cadok	e Pag q sinaliza cadastro ok e desvia para login
+  $pg_suerror = "phps/logon/su_user_error.php";	// errsupassw	suerr	  Pag q sinaliza login de SuperUsuario com erro na senha
+						// (ou seja deu boo-boo)
+
+  // Diretorio onde se encontra o pacote CISIS
+  //$cisisDir = $rootDir . '/cgi-bin/isis';
+    $cisisDir = $rootDir . '/cgi-bin/isis1660';
+  //$cisisDir = $rootDir . '/cgi-bin/BigIsis';
+    $cisisTab = $rootDir . '/tabs';
+    $cisisGiz = $rootDir . '/gizmos';
+
+  // Diretorio raiz das bases de dados
+  $basesDir = $rootDir . '/bases';
+
+  // Nome do arquivo de controle de bloqueio da base de dados
+  $filebloq = "ctrlbloq.txt";
+
+  // Recursos de depuracao com base no conteudo de DEBUG mapeado por bits
+  define("_BIT0_", 1);	// Mensagens de depuracao de passagem
+  define("_BIT1_", 2);	// 
+  define("_BIT2_", 4);	// Leituras de banco de dados
+  define("_BIT3_", 8);	// 
+  define("_BIT4_", 16);	// 
+  define("_BIT5_", 32);	// 
+  define("_BIT6_", 64);	// Verbosidade adicional
+  define("_BIT7_", 128);	// DUMP do rascunho de registro a
+  //$DEBUG = _BIT0_ + _BIT1_ + _BIT2_ + _BIT6_ + _BIT7_;
+  //$DEBUG = _BIT0_ + _BIT1_ + _BIT2_ + _BIT6_;
+  //$DEBUG = _BIT0_ + _BIT1_ + _BIT2_;
+  //$DEBUG = _BIT6_;
+  $DEBUG = 0;
+?>

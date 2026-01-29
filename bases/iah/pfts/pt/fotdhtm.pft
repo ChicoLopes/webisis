@@ -1,0 +1,177 @@
+ lw(9999),mpl
+ 
+ /* montagem efetiva do formato de exibicao */
+ proc('d7000d7001d7002'
+ 
+ /*		v270- Empréstimo / Nome / Data
+  */
+ if v270>'' then
+	'<7000 0>&#160;</7000>'
+	'<7001 0>&#160;</7001>'
+	'<7002 0>'
+		'<font color="red">(ATENCAO: EMPRESTADO: ',mhu,v270,mpl,')</font>'
+	'</7002>'
+ fi
+
+ /*		v1  - Tipo
+  */ 
+ if v1 : 'EMP.'  then '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>- Fotos EMPRESA -</7002>'     fi
+ if v1 : 'TEM.'  then '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>- Fotos TEMÁTICO -</7002>'    fi
+ 
+ '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>',if v300>'' then '(veja abaixo imagem digitalizada) ',fi,'<font color="red">- LOCALIZAÇÃO -</font></7002>'
+ 
+ /*		v14 - Armário
+  *		v40 - Negativo/vidro
+  *		v50 - Descrição
+  *		v70 - Caixa
+  *		v80 - Envelope
+  *		v81 - Número da foto
+  *		v95 - Álbum
+  *		v100- Código
+  */
+ if v1: 'EMP.' and p(v70) and p(v80) or 
+    v1: 'EMP.' and p(v70) and a(v80) or 
+    v1: 'EMP.' and p(v40) or 
+    v1: 'EMP.' and p(v95) or 
+    v1: 'EMP.' and p(v90) or 
+    v1: 'EMP.' and p(v100) then 
+		'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>CENTRO DE MEMÓRIA</font></7002>'
+		if v1: 'EMP.' and v70>'' and v80>'' then
+			'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+			'armário: ',v14,' - caixa: ',v70+| / |,'<br>'
+			'envelope: ',v80+| / |
+			'</font></7002>'
+		else if v1: 'EMP.' and v70>'' and v80='' then
+				'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+				'armário: ',v14,' - caixa: ', v70+| / |
+				'</font></7002>'
+			fi
+			if v81>'' then
+				'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+				'(n. ',v81+|; |,')'
+				'</font></7002>'
+			fi
+		fi
+		if v1: 'EMP.' and p(v95) then
+			'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+			'álbum nº: ',v95+|; |
+			'</font></7002>'
+		fi
+ fi
+
+ if v1: 'EMP.' and p(v100) then 
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+	'(CAIXA AZUL - FOT)''&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''codigo: ' v100(0,50)+|, |
+	'</font></7002>'
+ fi
+ 
+ /*		v14 - Armário
+  *		v40 - Negativo/Vidro
+  *		v70 - Caixa
+  *		v80 - Envelope
+  *		v81 - Número da foto
+  *		v90 - Foto restaurada
+  *		v95 - Álbum
+  */
+ if v1: 'TEM.' and p(v70) and p(v80) or 
+	v1: 'TEM.' and p(v70) and a(v80) or 
+	v1: 'TEM.' and p(v40) or 
+	v1: 'TEM.' and p(v95) or 
+	v1: 'TEM.' and p(v90) then 
+		'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>CENTRO DE MEMÓRIA</font></7002>'
+		if v1: 'TEM.' and p(v70) and p(v80) then
+			'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+			if v14>'' then 'armário: ',v14,' - ' fi, 'caixa: ',v70+| / |,'<br>'
+			'envelope: ',v80+| / |
+			'</font></7002>'
+		fi
+		if v1: 'TEM.' and p(v70) and a(v80) then
+			'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+			if v14>'' then 'armário: ',v14,' - ' fi, 'caixa: ',v70+| / |
+			'</font></7002>'
+		fi
+		if p(v81) then
+				'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+				'(n. ',v81+|; |,')'
+				'</font></7002>'
+		fi
+		if v1: 'TEM.' and p(v95) then
+			'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+			'álbum nº: ',v95+|; |
+			'</font></7002>'
+		fi
+ fi
+ 
+ /*		v14 - Armário
+  *		v100- Código
+  */
+ if v1: 'TEM.' and p(v100) then
+	'<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0><font color="red">'
+	'(CENTRO DE MEMÓRIA)<br>'
+	'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+	if v14>'' then 'armário: ',v14,' - ' fi,'codigo: ' v100+|, |
+	'</font></7002>'
+ fi
+ 
+ /*		v10 - Assunto
+  *		v20 - SubAssunto
+  *		v110- Data
+  */
+ '<7000 0>&#160;</7000><7001 0>&#160;</7001><7002 0>',v10|; |,v20+|; |,'</7002>'
+ '<7000 0>Data:</7000><7001 0>&#160;</7001><7002 0>',v110+| - |,'</7002>'
+ 
+ /*		v30 - Slides
+  *		v31 - Cromos
+  *		v40 - Negativo/Vidro
+  *		v50 - Negativos
+  *		v60 - Fotos
+  *		v90 - Foto restaurada
+  *		v91 - Negativo/Foto restaurada
+  *		v120- Formato
+  *		v131- Observações
+  */
+ if p(v30)  then '<7000 0>slides:</7000><7001 0>&#160;</7001><7002 0>',v30,'</7002>' fi
+ if p(v31)  then '<7000 0>cromos:</7000><7001 0>&#160;</7001><7002 0>',v31,'</7002>' fi
+ if p(v60)  then '<7000 0>fotos:</7000><7001 0>&#160;</7001><7002 0>',v60,'</7002>' fi
+ if p(v50)  then '<7000 0>negativos:</7000><7001 0>&#160;</7001><7002 0>',v50,'</7002>' fi
+ if p(v120) then '<7000 0>formato:</7000><7001 0>&#160;</7001><7002 0>',v120+| / |,'</7002>' fi
+ if p(v90)  then '<7000 0><font color="red">Foto restaurada:</font></7000><7001 0>&#160;</7001><7002 0>',v90+| / |,'</7002>' fi
+ if p(v91)  then '<7000 0><font color="red">Negativo/F. rest.:</font></7000><7001 0>&#160;</7001><7002 0>',v91+| / |,'</7002>' fi
+ if p(v40)  then '<7000 0><font color="red">Negativo/Vidro:</font></7000><7001 0>&#160;</7001><7002 0>',v40+| / |,'</7002>' fi
+ if p(v131) then '<7000 0>Observações:</7000><7001 0>&#160;</7001><7002 0>',v131,'</7002>' fi
+
+ /*		v300- imagem        SubA texto do link SubB nome do arquivo de imagem
+  *		v301- imagem cont.1 SubA texto do link SubB nome do arquivo de imagem
+  *		v302- imagem cont.1 SubA texto do link SubB nome do arquivo de imagem
+  */
+ if v300>'' or v301>'' or v302>'' then
+		'<7000 0>cromos/digitalizadas:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>'
+			if v300^a>'' then ('<a href="/iah/image/fot/',v300^b,'" target="_blank">',v300^a,'</a><br>') fi
+			if v301^a>'' then ('<a href="/iah/image/fot/',v301^b,'" target="_blank">',v301^a,'</a><br>') fi
+			if v302^a>'' then ('<a href="/iah/image/fot/',v302^b,'" target="_blank">',v302^a,'</a><br>') fi
+		'</7002>'
+ fi
+
+ /*		v130- Observacoes
+  */
+ if p(v130) then '<7000 0>Notas:</7000><7001 0>&#160;</7001><7002 0>',v130+|; |,'</7002>' fi
+
+ '<7000 0>&#160;</7000>'
+ '<7001 0>&#160;</7001>'
+ '<7002 0>&#160;</7002>'
+
+ )
+
+ /* Exibicao efetiva dos dados montados acima */
+ '<table width="100%" cellspacing="0" cellpadding="1" border="0">',/
+ (
+  '<tr valign="top">',/
+  ' <td width="25%"  align="right"><font face="verdana"><font size="1">',mpl,v7000,'</td>',/
+  ' <td width="1"   align="center"><font face="verdana"><font size="1">',mpl,v7001,'</td>',/
+  ' <td               align="left"><font face="verdana"><font size="1">',mpl,v7002,'</td>',/
+  '</tr>',/
+ )
+ '</table>',/
+

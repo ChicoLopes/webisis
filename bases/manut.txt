@@ -1,0 +1,24 @@
+Garantir o caminho ate o mx, por exemplo: ..\wrk\cisis\1030\
+
+00- Verificar tamanho dos arquivos MST e XRF
+ dir fot.mst fot.xrf
+01- prover copia do mst
+ ex: copy fot.mst fot.premanut.mst
+02- prover copia do xrf
+ ex: copy fot.xrf fot.premanut.xrf
+03- Verificar o registro de controle da base
+ ex: ..\wrk\cisis\1030\mx fot +control count=0
+04- Varrer os registros da base
+ ex: ..\wrk\cisis\1030\mx fot -all now tell=100
+05- Efetuar uma copia limpa da base
+ ex: ..\wrk\cisis\1030\mxcp fot create=work clean period=. repeat=% log=fot-clean.log tell=100
+06- Verificar o novo tamanho dos arquivos MST e XRF
+ dir work.*
+07- Verificar o registro de controle da base
+ ex: ..\wrk\cisis\1030\mx work +control count=0
+08- Varrer os registros da nova base
+ ex: ..\wrk\cisis\1030\mx work -all now tell=100
+09- Indexar a nova base
+ ex: ..\wrk\cisis\1030\mx work "fst=@fot.fst" "stw=@fot.stw" fullinv=work tell=100
+10- Comparar os tamanhos dos arquivos de indice
+ ex: dir work.* fot.*

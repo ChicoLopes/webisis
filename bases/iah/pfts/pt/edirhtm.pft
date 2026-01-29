@@ -1,0 +1,261 @@
+ lw(9999),mpl
+ 
+ /* montagem efetiva do formato de exibicao */
+ proc('d7000d7001d7002'
+ 
+ /* Autor  - v50 - (R)
+    Titulo - v60 - (R)
+  */
+ if v50>'' then
+ 		'<7000 0>Autor(es):</7000>'
+ 		'<7001 0>&#160;</7001>'
+ 		'<7002 0>',v50+|; |,'</7002>'
+ fi
+ if v60>'' then 
+ 		'<7000 0>Título(s):</7000>'
+ 		'<7001 0>&#160;</7001>'
+ 		'<7002 0>',mhl,v60+|; |,mpl,'</7002>'
+ fi
+ 
+ /* Adaptador - v51 - (R) */
+ if v51>'' then
+ 		'<7000 0>Adaptador(es):</7000>'
+ 		'<7001 0>&#160;</7001>'
+ 		'<7002 0>',v51+|; |,'</7002>'
+ fi
+
+ /* Ilustrador - v70 - (R) */
+ if v70>'' then
+		'<7000 0>Ilustrador(es):</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v70+|; |,'</7002>'
+ fi
+ 
+ /* Fotografia - v71 - (R) */
+ if v71>'' then
+ 	'<7000 0>Fotografo(s):</7000>'
+ 	'<7001 0>&#160;</7001>'
+ 	'<7002 0>',v71+|; |,'</7002>'
+ fi
+ 
+ /* Tradutor - v30 - (R) */
+ if v30>'' then
+		'<7000 0>Tradutor(es):</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v30+|; |,'</7002>'
+ fi
+ 
+ /* Titulo Original - v200 */
+ if v200>'' then
+		'<7000 0>Título original:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',mhl,v200+|; |,mpl,'</7002>'
+ fi
+
+ /* Data de lancamento - v120 */
+ if v120>'' or s(mpu,v41,mpl):'LIVRO DIGITAL' then
+ 		'<7000 0>Data do lan&ccedil;amento:</7000>'
+ 		'<7001 0>&#160;</7001>'
+ 		'<7002 0>',v120,if s(mpu,v41,mpl):'LIVRO DIGITAL' then " ("v220^d")" fi,'</7002>'
+ else
+    if s(mpu,v41,mpl):'LIVRO DIGITAL' then
+ 		'<7000 0>Data do lan&ccedil;amento:</7000>'
+ 		'<7001 0>&#160;</7001>'
+ 		'<7002 0>',v220^d,'</7002>'
+    fi
+ fi
+
+ /* Linha (de produto) - v41 */
+ if v41>'' then
+		'<7000 0>Linha(s):</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v41+|; |,'</7002>'
+ fi
+ 
+ /* Série - v40 */
+ if v40>'' then
+		'<7000 0>Série(s):</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v40+| e |,'</7002>'
+ fi
+
+ /* ISBN 
+   ISBN-13 - v196
+   ISBN-10 - v190
+   Livro que não tem ISBN devem ser sinalizados
+  */
+
+ if v196>'' and v190>'' then		/* ISBN-13 e ISBN-10 */
+		'<7000 0>ISBN-13:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v196+|; |,'</7002>'
+		'<7000 0>ISBN-10:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v190+|; |,'</7002>'
+ else if v196>'' and v190='' then	/* ISBN-13 */
+		'<7000 0>ISBN-13:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v196+|; |,'</7002>'
+ else if v196='' and v190>'' then	/* ISBN-10 */
+		'<7000 0>ISBN-10:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v190+|; |,'</7002>'
+ else /* sem ISBN */ /* if v196='' and v190='' and mfn<>1 then	
+		'<7000 0>ISBN:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>livro sem ISBN</7002>'
+        '<7000 0>Código:</7000>'
+        '<7001 0>&#160;</7001>'
+        '<7002 0>',v20+|; |,'</7002>'
+ fi */ fi fi fi
+
+ /* Localizacao fisica */
+ if v201>'' then
+                '<7000 0><b>Localiza&ccedil;&atilde;o</b>:</7000>'
+                '<7001 0>&#160;</7001>'
+                '<7002 0>'
+                        'Biblioteca / C&oacute;digo: ',v20+|; |,'<br>'
+                        v202
+                        replace(s(" / Arm&aacute;rio: "v21),'/','-')
+                        replace(s(" / Prateleira: "v22),'/','-')
+                        ' / C&oacute;digo: ',v201,'<br>'
+                '</7002>'
+ fi
+ if v20>'' and a(v201) then
+                '<7000 0><b>Localiza&ccedil;&atilde;o</b>:</7000>'
+                '<7001 0>&#160;</7001>'
+                '<7002 0>'
+                        if v202>'' then
+                                v202
+                                replace(s(" / Arm&aacute;rio: "v21),'/','-')
+                                replace(s(" / Prateleira: "v22),'/','-')
+                                ' / C&oacute;digo: 'v20+|; |
+                        else
+                                if s(mpu,v41,mpl):'LIVRO DIGITAL' then
+                                        v20+|; |
+                                else
+                                        'Biblioteca / C&oacute;digo: 'v20+|; |
+                                fi
+                        fi
+                '</7002>'
+ fi
+ 
+ /* TOMBO  v10 (R)*/
+ if v10>'' then
+		'<7000 0>Tombo:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',v10+|; |,'</7002>'
+ fi
+ 
+ /* Ortografia - V1 e V4 */
+ /*
+ if v1>'' and v4='' then
+ 	'<7000 0>&nbsp;</7000>'
+ 	'<7001 0>&#160;</7001>'
+ 	'<7002 0>(NOVA ORTOGRAFIA)</7002>'
+ fi
+ if v1>'' and v4>'' then
+ 	'<7000 0>&nbsp;</7000>'
+ 	'<7001 0>&#160;</7001>'
+ 	'<7002 0>(NOVA ORTOGRAFIA/VOLP)</7002>'
+ fi
+ */
+
+ /* STATUS - v242 */
+ '<7000 0>Status:</7000>'
+ '<7001 0>&#160;</7001>'
+ if v242>'' then
+	'<7002 0>',v242+|; |,'</7002>'
+ else
+	'<7002 0>ESG</7002>'
+ fi
+
+ /* Catalogo Infantil v240 */
+ if v240>'' then
+		'<7000 0>Cat. Infantil:</7000>'
+		'<7001 0>&#160;</7001>'
+	'<7002 0>',
+    'CAT-',v240+|; |,'&nbsp;:&nbsp;LIVROS PARA CRIANÇAS',
+    if p(v101)and a(v102) then mhl,'- EDUCAÇÃO INFANTIL' fi,
+    if p(v102)and a(v101) then mhl,'- ENSINO FUNDAMENTAL-ANOS INICIAIS' fi,
+    if p(v101)and p(v102) then mhl,'- EDUCAÇÃO INFANTIL E ENSINO FUNDAMENTAL-ANOS INICIAIS' fi,/
+    if p(v246)and p(v248) then mpl,'<br>',mhl,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(' v246 ' - ' v248 ')', fi,/
+	'</7002>'
+ fi
+ 
+ /* Catalogo Juvenil v241 */
+ if v241>'' then
+		'<7000 0>Cat. Juvenil:</7000>'
+		'<7001 0>&#160;</7001>'
+	'<7002 0>'
+	'CAT-',v241+|; |,'&nbsp;:&nbsp;LIVROS PARA JOVENS ',
+    if p(v103)and a(v104) then mhl,'- ENSINO FUNDAMENTAL-ANOS FINAIS' fi,
+    if p(v104)and a(v103) then mhl,'- ENSINO MÉDIO' fi,
+    if p(v103)and p(v104) then mhl,'- ENSINO FUNDAMENTAL-ANOS FINAIS E ENSINO MÉDIO' fi,/
+    if p(v247)and p(v249) then mpl,'<br>',mhl,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(' v247 ' - ' v249 ')', fi,/
+	'</7002>'
+ fi
+ 
+ /* Imagem da capa - v300 * /
+ if v300>'' then
+		'<7000 0>Capa:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',replace(v300^a[last],'veja ',''),' (arquivo: ',v300^b[last],') </7002>'
+ fi*/
+ 
+ /* Livro indicado/selecionado/concorre/diplomado - v171 - (R) 
+    Livro (indicado/selecionado/concorre/diplomado)
+  */
+ if v171>'' then
+		'<7000 0>Livro indicado para:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',(v171+|; <br>|),'</7002>'
+ fi
+ 
+ /* Livro inscrito - v244 - (R) 
+  */
+ if v244>'' then
+		'<7000 0>Livro inscrito para:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',(v244+|; <br>|),'</7002>'
+ fi
+ 
+ /* Premiações - v173 */
+ if v173>'' then
+		'<7000 0>Livro premiado com:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>',(v173+|; <br>|),'</7002>'
+ fi
+ 
+ if v300[2]>'' then
+	
+		'<7000 0>',f(nocc(v300),1,0),' imagens disponíveis:</7000>'
+		'<7001 0>&#160;</7001>'
+		'<7002 0>'
+			('<a href="/iah/image/edi/',v300^b,'" target="imagem">',v300^a,'</a> : ',f(iocc,3,0),'/',f(nocc(v300),1,0),'<br>')
+		'</7002>'
+	
+ fi
+ 
+ /* ESTILO */
+ 	'<7000 0>&#160;</7000>'
+ 	'<7001 0>&#160;</7001>'
+ 	'<7002 0>&#160;</7002>'
+
+/*	'ATENÇÃO: A partir de ago/2011 a BIBLIOTECA usa os dados do PROTHEUS e do DEPARTAMENTO de IMPORTAÇÃO para atualizar sua Base.
+	Esses dados são tirados dos relatórios mensais do PROTHEUS: "Relação das Movimentações internas" e dos relatórios da IMPORTAÇÃO:
+	"Follow-up - Programa Importação" e são anexados na Base da Biblioteca que mostra as edições, impressões, datas e tiragens de cada obra.'
+*/
+ )
+
+ /* Exibicao efetiva dos dados montados acima */
+ '<table width="100%" cellspacing="0" cellpadding="1" border="0">',/
+ (
+  '<tr valign="top">',/
+  ' <td width="25%"  align="right"><font face="verdana"><font size="1">',mpl,v7000,'</td>',/
+  ' <td width="1"   align="center"><font face="verdana"><font size="1">',mpl,v7001,'</td>',/
+  ' <td               align="left"><font face="verdana"><font size="1">',mpl,v7002,'</td>',/
+  '</tr>',/
+ )
+ '</table>',/
+

@@ -1,0 +1,222 @@
+LGST="$?"
+# IMPORTANTE: Anota o status do ultimo comando executado antes de tudo
+# -------------------------------------------------------------------------- #
+# logging - Verifica e registra resultado da ultima operacao
+# -------------------------------------------------------------------------- #
+#      Entrada : Ajustar as variaveis TRP, MSG, RST, QTD
+#			TRP - tipo de armadilha (descrito em observacoes)
+#			MSG - mensagem a ser registrada
+#			RST - path e/ou mascara do resultado do processamento
+#			QTD - quantidade de arquivos esperada
+#			FLL - marcador que libera registro em arquivo
+#        Saida : Saidas geradas pelo shell
+#     Corrente : diretorio corrente para inicio de execucao
+#      Chamada : source logging
+#      Exemplo : 
+#  Objetivo(s) : interromper execucao se ocorrer ERRO
+#  Comentarios : ATENCAO: A linha com o LGST="#?" deve, obrigatoriamente, ser a
+#			primeira a ser executada
+#		 Layout do registro efetuado por logging
+#			 1 - Diretorio de Producao
+#			 2 - Diretorio corrente
+#			 3 - SHELL chamado
+#			 4 - PID do shell
+#			 5 - Ano      (formato YYYYMMDD)
+#			 6 - horas    (formato HHMMSS)
+#			 7 - TPR indicado, ou modificado conforme regras acima
+#			 8 - Path execucao
+#			 9 - RST (mascara ou path do resultado do processamento)
+#			10 - QTD (quantidade de arquivos encontrada ou 0)
+#			11 - se TPR=start   comando da chamada ao script
+#			     se TRP=end     vazio
+#			     se TPR=fatal   TRP - MSG
+#			     se TPR=iffatal fatal - MSG (se erro)
+#			     se TPR outro   other - MSG (se ok)
+#			12 - User name
+#  Observacoes : Os tipos de registros (armadilha) retratados em TRP sao:
+#			start	sinaliza inicio de script
+#			end	sinaliza fim de script
+#			iffatal	testa o retorno de uma operacao
+#			warning	sinaliza situacao nao fatal mas anormal
+#			fatal	sinaliza situacao de erro e para execucao
+#			outros	sinaliza situacao desejada
+#		 Em RST pode-se ter uma mascara para contagem de arquivos, p.
+#			ex. *.cnt para contar a qtd de arquivos .cnt no
+#			diretorio corrente
+#			Tambem se pode ter um caminho para o diretorio onde
+#			contar os arquivos
+#			Por ultimo pode-se ter um caminho mais a mascara
+#		 Em QTD podemos encontrar a QTD esperada de arquivos
+#			Qdo RST e QTD estao ajustadas eh feita uma comparacao
+#			entre QTD e no numero de arquivos, anotando em log
+#			um warning em caso de divergencia
+#		 Da conjuncao RST X QTD podemos obter:
+#			RST QTD	
+#			 p   p	anota QTD de RST do tipo TPR ou WARNING
+#			 p   a	anota QTD de RST do tipo TPR
+#			 a   p	anota QTD        do tipo TPR
+#			 a   a	anota 0          do tipo TPR
+#        Notas : A estrutura de diretorios esperada eh mostrada a seguir:
+#			/LGRAIZ/LGPRD/...
+#			LGRAIZ - Diretorio de alto nivel que reune os produtos
+#			LGPRD  - Diretorio individual por produto
+#			...    - Arvore de diretorios livre
+# Dependencias : Relacoes de dependencia para execucao, como arquivos
+#                  auxiliares esperados, estrutura de diretorios, etc.
+# -------------------------------------------------------------------------- #
+# Historico
+# versao data, responsaveis
+#	- Descricao
+cat >/dev/null <<HISTORICO
+vrs: 1.00 1993-12-16, Anchieta
+	- Edicao original
+vrs: 2.00 2010-10-05, FJLopes/MBottura
+	- Revisao de padroes para uso no SciELO
+vrs: 3.00 2011-07-05, FJLopes
+	- Aprimoramentos operacionais (FLL e opcoes)
+vrs: 4.00 20120206, FJLopes
+	- Incorporacao de funcoes de controle de processos
+HISTORICO
+
+# -------------------------------------------------------------------------- #
+# Avalia opcoes de execucao que devem ser especiais do log
+
+case "$1" in
+	/? | --log-help)
+		#              1         2         3         4         5         6         7         8
+		#     12345678901234567890123456789012345678901234567890123456789012345678901234567890
+		echo
+		echo "Sintaxe: source logging [/? | --log-version]"
+		echo " /?, --log-help  Mostra esta tela de ajuda e sai"
+		echo " --log-version   Mostra a versao do programa e sai"
+		echo
+		echo " == Variaveis de ambiente =="
+		echo " FLL - Permite escrita de registro em arquivo (se valorada)"
+		echo " TPR - Armadilhas. Efetuam 6 tipos de registros:"
+		echo "       start = inicio de execucao de shell-script (mensagem = chamada)"
+		echo "         end = termino de execucao de shell-script (sem mensagem)"
+		echo "     iffatal = testa resultado da operacao anterior e interrompe se Nok"
+		echo "       fatal = para a execucao"
+		echo "     warning = nao para a execucao"
+		echo "      outros = exibe a mensagem nao avaliar STATUS de execucao"
+		echo " MSG - Mensagem a ser registrada"
+		echo " RST - Resultado a testar (caminho e/ou mascara)"
+		echo " QTD - Quantidade esperada de arquivos (se informado)"
+		#     12345678901234567890123456789012345678901234567890123456789012345678901234567890
+		#              1         2         3         4         5         6         7         8
+		echo
+		exit
+	;;
+
+	--log-version)
+		echo -n "Log system  "
+		grep '^vrs: ' "$PRGDR/logging" | tail -n "1" | cut -d "," -f "1"
+		exit
+	;;
+esac
+
+
+# Anota localizacao (PATH) corrente
+LGDTC=$(pwd)
+
+# Anota o diretorio de mais alta hierarquia
+LGRAIZ=/$(echo "$LGDTC" | cut -d "/" -f "2")
+
+# Anota o diretorio de producao
+#  RE empregada:
+#    iniciando por barra                     - '/'
+#    enquanto nao for barra seguido de barra - '[^/]*/'
+#    extrai o que nao for barra              - '\([^/]*\)'
+LGPRD=$(expr "$LGDTC" : '/[^/]*/\([^/]*\)')
+
+# Anota o diretorio da base
+#  RE empregada:
+#    iniciando por barra                     - '/'
+#    enquanto nao for barra seguido de barra - '[^/]*/'
+#    enquanto nao for barra seguido de barra - '[^/]*/'
+#    extrai o que nao for barra              - '\([^/]*\)'
+LGBAS=$(expr "$LGDTC" : '/[^/]*/[^/]*/\([^/]*\)')
+
+# Anota o comando emitido
+#  RE empregada:
+#    apos a primeira barra - '.*/'
+#    extrai o que vier     - '\(.*\)'
+LGPRC=$(expr "/$0" : '.*/\(.*\)')
+
+# Anota data (ano mes dia) e horario (hora minuto e segundo) em dois campos de seq
+LGDTH=$(date '+%Y%m%d|%H%M%S')
+
+# Toma acao conforme o TPR e o STATUS do ultimo comando
+case $TPR in
+		
+	start)		# Inicio de execucao de processo
+			#	Mensagem de LOG: linha de comando chamada
+			LGMSG="$0 $*"
+	;;
+
+	end)		# Final de execucao de processo
+			#	Mensagem de LOG: vazia
+			LGMSG=""
+	;;
+
+	fatal|warning)	# Evento terminar processo por falha
+			#	Mensagem de LOG: Texto definido em MSG
+			#	    Sinalizacao: COMANDO: STATUS - Texto definido em MSG
+			LGMSG="$MSG"
+			echo "$LGPRC: $TPR - $MSG"
+	;;
+
+	iffatal)	# Verifica STATUS do ultimo comando
+			#	Mensagem de LOG: (em caso de falha) Texto definido em MSG
+			#	    Sinalizacao: (em caso de falha) COMANDO: STATUS - Texto definido em MSG
+			if [ "$LGST" -ne 0 ]; then
+				PROCcrack.sh $MYID
+				TPR="fatal"
+				LGMSG="$MSG"
+				echo "$LGPRC: $TPR - $MSG"
+			fi
+	;;
+
+	*)		# Demais casos de TPR
+			#	Mensagem de LOG: STATUS - Texto definido em MSG
+			#	    Sinalizacao: COMANDO: Texto definido em MSG
+			TPR="other"
+			LGMSG="$TPR - $MSG"
+			echo "$LGPRC: $LGMSG"
+	;;
+esac
+
+
+# Solicitacao de monitoramento pre-tratada, verifica se deve abortar o processo por sinal externo
+MYSTS=$(PROCread.sh $MYID)
+if [ $(($MYSTS & $_ABORT_)) -eq $_ABORT_ ]; then
+
+	PROCwrite.sh $putDOI $(expr $(($MYSTS & $_ERROR_)) + $_ABORTED_)	# Indica q foi abortado mantendo ERRO
+	TPR="fatal"
+	LGMSG="$LGMSG (ABORTAR)"
+	echo "$LGPRC: == PROCESSO ABORTADO =="
+
+fi
+
+#  Se TPR nao vale "iffatal", eh um evento que necessita registro em arquivo
+if [ "$TPR" != "iffatal" ]; then
+	
+	if [ -n "$RST" ]; then
+		LGQTD=$(ls -lgo $RST | tr -s " " "|" | cut -d "|" -f "3" | wc -l | tr -d " ")
+		if [ -n "$QTD" ]; then
+			if [ "$QTD" -ne "$LGQTD"  ]; then
+				TPR="warning"
+				echo "$TPR - difere de: $QTD"
+			fi
+		fi
+	else
+		LGQTD=$QTD
+		[ -z "$LGQTD" ] && LGQTD="0"
+	fi
+	[ -z "$RST" -a -z "$QTD" ] || LGMSG="$TPR - $MSG"
+		
+	[ "$FLL" ] && echo "$LGPRD|$LGBAS|$LGPRC|$$|$LGDTH|$TPR|$LGDTC|$RST|$LGQTD|$LGMSG|$LOGNAME" >> $LGRAIZ/$LGPRD/$LGPRD.log
+	# Se TPR vale fatal deve interromper a cadeia de execucao
+	[ "$TPR" = fatal ] && exit 1
+fi
+

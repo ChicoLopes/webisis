@@ -1,0 +1,34 @@
+bde	BDEnf	/bases/lilG4/bde.lil	scp	^h=pr10vm.bireme.br^d=/home/apps/bvs.br/wp-enfermagem/bases/lildbi/dbcertif/lilacs^l=8022^p=transfer^s=102030	
+sus	ColecionaSUS	/bases/lilG4/sus.lil	scp	^h=pr20dx.bireme.br^d=/home/aplicacoes/coleciona-sus/bases/lildbi/dbcertif/lilacs^l=8022^p=transfer^s=102030	
+mis	BVSMS	/bases/lilG4/mis.lil	scp	^h=pr20dx.bireme.br^d=/home/aplicacoes/abcd-ms/bases/lildbi/dbcertif/lilacs^l=8022^p=transfer^s=102030	
+sms	SMS-SP	/bases/lilG4/sms.lil	scp	^h=pr10vm.bireme.br^d=/home/apps/bvs.br/wp-sms-sp/bases/lildbi/dbcertif/lilacs^l=8022^p=transfer^s=102030	
+ses	SES-SP	/bases/lilG4/ses.lil	scp	^h=pr10vm.bireme.br^d=/home/apps/bvs.br/wp-ses-sp/bases/lildbi/dbcertif/lilacs^l=8022^p=transfer^s=102030	
+abr	ADOLEC-BR	/bases/lilG4/abr.lil	scp	^h=hm01dx.bireme.br^d=/home/aplicacoes-bvs/adolec-br/bases/lildbi/dbcertif/lilacs^l=22^p=transfer^s=102030	
+crt	CRT/AIDS	/bases/lilG4/crt.lil	scp	^h=hm02dx.bireme.br^d=/home/aplicacoes-bvs/crt-dst-aids/bases/iah/lilacs^l=22^p=transfer^s=102030	
+hom	HOMEOIndex	/bases/lilG4/hom.lil	scp	^h=hm01dx.bireme.br^d=/home/aplicacoes-bvs/homeopatia/bases/lildbi/dbcertif/lilacs^l=22^p=transfer^s=102030	
+pah	PAHO	/bases/lilG4/pah.lil	scp	^h=^d=/bases/lilG4/pah.lil/isos^l=22^p=transfer^s=102030^b=paho_asc850.iso	
+cid	CidSaude	/bases/lilG4/cid.lil	scp	^h=^d=/bases/lilG4/cid.lil/isos^l=22^p=transfer^s=102030^b=cidsaude_2015_abril_28_asc850.iso	
+des	desastres	/bases/lilG4/des.lil	scp	^h=^d=/bases/lilG4/des.lil/isos^l=22^p=transfer^s=102030^b=des2012dez_asc850.iso	
+rep	REPDISCA	/bases/lilG4/rep.lil	scp	^h=^d=/bases/lilG4/rep.lil/isos^l=22^p=transfer^s=102030^b=rep2010out_asc850.iso	
+med	MedCarib	/bases/lilG4/med.lil	scp	^h=^d=/bases/lilG4/med.lil/isos^l=22^p=transfer^s=102030^b=add_medcarib.iso	
+lil	LILACS	/bases/lilG4/lil.lil	scp	^h=serverabd^d=/home/lilacs/www/bases/lildbi/dbcertif/lilacs^l=22^p=transfer^s=102030	
+ibc	IBECS	/bases/lilG4/ibc.lil	scp	^h=pr10vm.bireme.br^d=/home/apps/bvsalud-org/lildbi-ibecs/bases/lildbi/dbnotcertif/lilacs^l=8022^p=transfer^s=102030^b=amalia;Anabel;jmg5;maribel2;marisol;LILACS	
+bbo	BBO	/bases/lilG4/bbo.lil	ftp	^h=ftp.bireme.br^d=/home/ftp/BBO_ofi_^l=21^p=BBO_ofi_^s=BBO_ofi_^b=BBOv36b.iso	
+nml	NMail	/bases/lilG4/nml.lil	rsync	^h=quartzo2.bireme.br^d=/home/intranet/bases/nmail^l=22^p=transfer^s102030^b=nmail.fst;nmail.xrf;nmail.mst	
+tit	TITLE	/bases/lilG4/tit.lil	rsync	^h=quartzo2.bireme.br^d=/home/intranet/bases/portal/newprocs/isos/^l=22^p=transfer^s=102030^b=title.iso	
+his	HISA	/bases/lilG4/his.lil	wget	^h=http://basehisa.coc.fiocruz.br/P/^d=/P^l=^p=^s=^b=hisa.iso	
+psi	Index PSI	/bases/lilG4/psi.lil	wget	^h=http://newpsi.bvs-psi.org.br/bireme/^d=/bireme^l=^p=^s=^b=psi.tar.gz	
+pte	Index PSI Teses	/bases/lilG4/pte.lil	wget	^h=http://newpsi.bvs-psi.org.br/bireme/^d=/bireme^l=^p=^s=^b=tese.tar.gz	
+pnc	peru	/bases/lilG4/pnc.lil	oai	^h=http://www.bvs.org.pe/isis-oai-provider/^d=/bases/xml2isis/oai/isis^l=PORT^p=USER^s=PASSWD^b=nac
+pru	bvsperu	/bases/lilG4/pru.lil	oai	^h=http://bvs.minsa.gob.pe/isis-oai-provider/^d=/bases/xml2isis/oai/isis^l=PORT^p=USER^s=PASSWD^b=minsa
+fio	fiocruz	/bases/lilG4/fio.lil	oai	^h=http://www.bvsdip.icict.fiocruz.br/isis-oai-provider^d=/bases/xml2isis/oai/isis^l=PORT^p=USER^s=PASSWD^b=far;aro;bam;car;dip;eps;bps;bvs;teh;cla;cam;crr;ens;ilm;int;tes;the
+psa	bivipsil	/bases/lilG4/psa.lil	oai	^h=^d=/bases/xml2isis/oai/isis^l=^p=^s=^b=bivipsil
+cum	cumed	/bases/lilG4/cum.lil	oai	^h=^d=/bases/xml2isis/oai/tpl/cron_Harvest_CUMED_isis_oai_provider.sh^l=^p=^s=^b=cumed
+iec	iec	/bases/lilG4/iec.lil	oai	^h=^d=/bases/xml2isis/oai/tpl/cron_Harvest_IEC_isis_oai_provider.sh^l=^p=^s=^b=iecbvs
+bio	bioetica	/bases/lilG4/bio.lil	dspace	^h=^d=/bases/xml2isis/oai/tpl/cron_Harvest_BIOETICA_isis_oai_provider.sh^l=^p=^s=^b=
+vtt	vetteses	/bases/lilG4/vtt.lil	oai	^h=^d=/bases/xml2isis/oai/tpl^l=^p=^s=^b=
+vti	vetindex	/bases/lilG4/vti.lil	oai	^h=^d=/bases/xml2isis/oai/tpl^l=^p=^s=^b=
+arc	ARCA	/bases/lilG4/arc.lil	dspace	^h=^d=/bases/xml2isis/oai/tpl^l=^p=^s=^b=arcadim;arcamods
+
+lis		LIS		lis	100	resource	$PATH_INPUT/redbvs
+mmd	multimedia	multimedia	200	multimedia	$PATH_INPUT/redbvs

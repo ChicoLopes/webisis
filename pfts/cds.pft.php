@@ -1,0 +1,15 @@
+'<p class="result"><a href="/phps/form.php?registro=',mfn(1),'&acao=goto&base=cds">Reg: ',mfn(6),'</a> ',mdl,
+"Conferência: "v12+| / |"; ",
+"Título: "v24+|; |"; ",
+"Tít idiomas: "(|(|v76^z|: |,v76^*|) |)"; ",
+"Autor(es): "v70+| / |"; ",
+"Ed."v25| / |"; ",
+"Imprenta: "v26"; ",
+"N. Chamada: "v30| / |"; ",
+"Série: "|(|v44|) |"; ",
+"Notas: "v50| / |"; ",
+"Órgãoe e Encontros: "|// |v71,| // |v72| / |"; ",
+"Tít. adic.: "v74+| / |"; ",
+"Palavras chave: "v69+| / |". "
+mpl,'</p><hr>',
+/

@@ -1,0 +1,341 @@
+!ID 0
+!v001!161
+!v002!173
+!v011!asc
+!v021!asc
+!v050!exclamacao invertida
+!v059!versao 1.0a^d20080317
+!ID 0
+!v001!162
+!v002!155
+!v011!asc
+!v021!asc
+!v050!cents (simbolo monetario)
+!ID 0
+!v001!163
+!v002!156
+!v011!asc
+!v021!asc
+!v050!libra (simbolo monetario)
+!ID 0
+!v001!165
+!v002!157
+!v011!asc
+!v021!asc
+!v050!yene (simbolo monetario)
+!ID 0
+!v001!170
+!v002!166
+!v011!asc
+!v021!asc
+!v050!ordinal feminino
+!ID 0
+!v001!171
+!v002!174
+!v011!asc
+!v021!asc
+!v050!aspa angular esquerda (abre marcacao)
+!ID 0
+!v001!172
+!v002!170
+!v011!asc
+!v021!asc
+!v050!not (simbolo logico)
+!ID 0
+!v001!176
+!v002!248
+!v011!asc
+!v021!asc
+!v050!grau (simbolo)
+!ID 0
+!v001!177
+!v002!241
+!v011!asc
+!v021!asc
+!v050!mais ou menos (simbolo)
+!ID 0
+!v001!178
+!v002!253
+!v011!asc
+!v021!asc
+!v050!elevado ao quadrado
+!ID 0
+!v001!181
+!v002!230
+!v011!asc
+!v021!asc
+!v050!micro (letra grega)
+!ID 0
+!v001!183
+!v002!250
+!v011!asc
+!v021!asc
+!v050!ponto central (simbolo)
+!ID 0
+!v001!186
+!v002!167
+!v011!asc
+!v021!asc
+!v050!ordinal masculino
+!ID 0
+!v001!187
+!v002!175
+!v011!asc
+!v021!asc
+!v050!aspa angular direita (fecha marcacao)
+!ID 0
+!v001!188
+!v002!172
+!v011!asc
+!v021!asc
+!v050!fracao um quarto
+!ID 0
+!v001!189
+!v002!171
+!v011!asc
+!v021!asc
+!v050!fracao meio
+!ID 0
+!v001!191
+!v002!168
+!v011!asc
+!v021!asc
+!v050!interrogacao invertida
+!ID 0
+!v001!195
+!v002!142
+!v011!asc
+!v021!asc
+!v051!A til maiusculo
+!v052!A trema maiusculo
+!ID 0
+!v001!196
+!v002!142
+!v011!asc
+!v021!asc
+!v050!A trema maiusculo
+!ID 0
+!v001!197
+!v002!143
+!v011!asc
+!v021!asc
+!v050!A bola maiusculo
+!ID 0
+!v001!198
+!v002!146
+!v011!asc
+!v021!asc
+!v050!AE maiusculo
+!ID 0
+!v001!199
+!v002!128
+!v011!asc
+!v021!asc
+!v050!C cedilha maiusculo
+!ID 0
+!v001!201
+!v002!144
+!v011!asc
+!v021!asc
+!v050!E agudo maiusculo
+!ID 0
+!v001!209
+!v002!165
+!v011!asc
+!v021!asc
+!v050!N til maiusculo
+!ID 0
+!v001!213
+!v002!153
+!v011!asc
+!v021!asc
+!v051!O til maiusculo
+!v052!O trema maiusculo
+!ID 0
+!v001!214
+!v002!153
+!v011!asc
+!v021!asc
+!v050!O trema maiusculo
+!ID 0
+!v001!220
+!v002!154
+!v011!asc
+!v021!asc
+!v050!U trema maiusculo
+!ID 0
+!v001!223
+!v002!225
+!v011!asc
+!v021!asc
+!v050!beta (ligadura do idioma alemao)
+!ID 0
+!v001!224
+!v002!133
+!v011!asc
+!v021!asc
+!v050!a grave minusculo
+!ID 0
+!v001!225
+!v002!160
+!v011!asc
+!v021!asc
+!v050!a agudo minusculo
+!ID 0
+!v001!226
+!v002!131
+!v011!asc
+!v021!asc
+!v050!a circunflexo minusculo
+!ID 0
+!v001!227
+!v002!132
+!v011!asc
+!v021!asc
+!v051!a til minusculo
+!v052!a trema minusculo
+!ID 0
+!v001!228
+!v002!132
+!v011!asc
+!v021!asc
+!v050!a trema minusculo
+!ID 0
+!v001!229
+!v002!134
+!v011!asc
+!v021!asc
+!v050!a bola minusculo
+!ID 0
+!v001!230
+!v002!145
+!v011!asc
+!v021!asc
+!v050!ae minusculo
+!ID 0
+!v001!231
+!v002!135
+!v011!asc
+!v021!asc
+!v050!c cedilha minusculo
+!ID 0
+!v001!232
+!v002!138
+!v011!asc
+!v021!asc
+!v050!e grave minusculo
+!ID 0
+!v001!233
+!v002!130
+!v011!asc
+!v021!asc
+!v050!e agudo minusculo
+!ID 0
+!v001!234
+!v002!136
+!v011!asc
+!v021!asc
+!v050!e circunflexo minusculo
+!ID 0
+!v001!235
+!v002!137
+!v011!asc
+!v021!asc
+!v050!e trema minusculo
+!ID 0
+!v001!236
+!v002!141
+!v011!asc
+!v021!asc
+!v050!i grave minusculo
+!ID 0
+!v001!237
+!v002!161
+!v011!asc
+!v021!asc
+!v050!i agudo minusculo
+!ID 0
+!v001!238
+!v002!140
+!v011!asc
+!v021!asc
+!v050!i circunflexo minusculo
+!ID 0
+!v001!239
+!v002!139
+!v011!asc
+!v021!asc
+!v050!i trema minusculo
+!ID 0
+!v001!241
+!v002!164
+!v011!asc
+!v021!asc
+!v050!n til minusculo
+!ID 0
+!v001!242
+!v002!149
+!v011!asc
+!v021!asc
+!v050!o grave minusculo
+!ID 0
+!v001!243
+!v002!162
+!v011!asc
+!v021!asc
+!v050!o agudo minusculo
+!ID 0
+!v001!244
+!v002!147
+!v011!asc
+!v021!asc
+!v050!o circunflexo minusculo
+!ID 0
+!v001!245
+!v002!148
+!v011!asc
+!v021!asc
+!v051!o til minusculo
+!v052!o trema minusculo
+!ID 0
+!v001!246
+!v002!148
+!v011!asc
+!v021!asc
+!v050!o trema minusculo
+!ID 0
+!v001!247
+!v002!246
+!v011!asc
+!v021!asc
+!v050!dividisao
+!ID 0
+!v001!249
+!v002!151
+!v011!asc
+!v021!asc
+!v050!u grave minusculo
+!ID 0
+!v001!250
+!v002!163
+!v011!asc
+!v021!asc
+!v050!u agudo minusculo
+!ID 0
+!v001!251
+!v002!150
+!v011!asc
+!v021!asc
+!v050!u circunflexo minusculo
+!ID 0
+!v001!252
+!v002!129
+!v011!asc
+!v021!asc
+!v050!u trema minusculo
+!ID 0
+!v001!255
+!v002!152
+!v011!asc
+!v021!asc
+!v050!y trema minusculo

@@ -1,0 +1,3 @@
+Q=`whoami`
+ps -flH -u $Q
+unset Q

@@ -1,0 +1,5 @@
+# Ambientacao para uso do mongoDB
+MONGO_HOME=/usr/local/mongodb
+
+# Coloca tudo disponivel para o ambiente operativo
+export MONGO_HOME

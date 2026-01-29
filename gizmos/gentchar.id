@@ -1,0 +1,26 @@
+!ID 0
+!v001!&quot;
+!v002!034
+!v021!asc
+!v050!Quotation mark (aspas - ")
+!v059!versao 1.0a^d20080317
+!ID 0
+!v001!&amp;
+!v002!038
+!v021!asc
+!v050!Ampersand (e comercial - &)
+!ID 0
+!v001!&apos;
+!v002!039
+!v021!asc
+!v050!Apostrophe (apostrofe - ')
+!ID 0
+!v001!&lt;
+!v002!060
+!v021!asc
+!v050!Less than (menor que - <)
+!ID 0
+!v001!&gt;
+!v002!062
+!v021!asc
+!v050!Greater than (maior que - >)

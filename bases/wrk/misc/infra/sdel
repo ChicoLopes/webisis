@@ -1,0 +1,26 @@
+#!/bin/bash
+# ------------------------------------------------------------------------- #
+# sdel - security delete
+# ------------------------------------------------------------------------- #
+#      Entrada: nome absoluto do arquivo a ser apagado
+#        Saida: 
+#     Corrente: 
+#      Chamada: $PROCS/sdel <PARM1>
+#      Exemplo: $PROCS/sdel /bases/lil.000/tabs/work.flg
+#               ssh serverofi2 $PROCS/sdel /bases/lil.000/work.flg
+#  Comentarios: O comando primeiro verifica se existe o arquivo e so entao
+#                 efetua a sua eliminacao
+#  Observacoes: Se nao houver parametro de chamada nada sera efetuado.
+#               Utiliza a opcao FORCE do comando rm.
+#               Se nao houver direitos suficientes gera mensagem de erro.
+# Dependencias: NECESSARIAMENTE entre os servidores deve haver uma
+#                 CHAVE PUBLICA DE AUTENTICACAO, de forma que
+#                 seja dispensada a interacao com operador para o processo.
+# ------------------------------------------------------------------------- #
+#   DATA    Responsaveis           Comentarios
+# 20090513  MBottura/FJLopes       Edicao original
+#
+
+# ========================================================================= #
+
+[ -f "$1" ] && rm -f $1
