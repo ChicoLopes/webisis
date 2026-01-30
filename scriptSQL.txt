@@ -1,0 +1,16 @@
+-- Certifique-se de estar usando o banco de dados correto
+USE webisis;
+
+-- Criação da tabela 'operadores' com restrições adicionais
+CREATE TABLE operadores (
+    idOperador INT(11) NOT NULL AUTO_INCREMENT,               -- ID único do operador
+    nome_Operador VARCHAR(254) CHARACTER SET latin1 NOT NULL, -- Nome obrigatório
+    senhaOperador VARCHAR(254) CHARACTER SET latin1 NOT NULL, -- Senha obrigatória
+    emailOperador VARCHAR(254) CHARACTER SET latin1,          -- Email nao obrigatório e pode repetir
+    fone_Operador VARCHAR(30) CHARACTER SET latin1,           -- Telefone (opcional)
+    nivelOperador TINYINT(3) NOT NULL DEFAULT 1,              -- Nível de acesso obrigatório, padrão = 1
+    pergSecreta VARCHAR(254) CHARACTER SET latin1,            -- Pergunta secreta (opcional)
+    respSecreta VARCHAR(254) CHARACTER SET latin1,            -- Resposta secreta (opcional)
+    PRIMARY KEY (idOperador)                                  -- Chave primária
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
