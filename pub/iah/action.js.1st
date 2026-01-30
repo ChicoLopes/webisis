@@ -1,4 +1,0 @@
-var action="/cgi-bin/wxis.exe";
-var path_data="/iah/";
-var path_cgi_bin="/var/www/cgi-bin/iah/";
-var path_database="/var/www/bases/iah/";
