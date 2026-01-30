@@ -16,8 +16,8 @@
 
 <body> <!-- wrongResponse.php -->
   <?php
-	
-  ?>
+  
+	?>
   <section>
     <div class="container">
       <div class="formlogin">
